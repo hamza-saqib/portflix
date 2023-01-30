@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
+    {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +73,51 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+    <div class="container my-4">
+        @foreach ($errors->all() as $error)
+                    <p style="color: red;">{{ $error }}</p>
+                @endforeach
+        <div class="row justify-content-center">
+            <div class="col-md-5 profile_bg_clr p-5">
+                <h4 class="text-center">Create Account</h4>
+                <p class="text-center">Please Register using account detail bellow.</p>
+                <form class="row g-3 needs-validation" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="col-md-12 pt-4">
+                        <label for="validationCustom01" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="validationCustom01" name="name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <label for="validationCustom03" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" id="validationCustom03" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <label for="validationCustom04" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="validationCustom04" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <label for="validationCustom04" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" name="password_confirmation" id="validationCustom04" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-12 pt-4">
+                        <button class="btn btn-primary" type="submit">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection

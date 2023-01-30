@@ -14,7 +14,8 @@ class ThemeController extends Controller
      */
     public function index()
     {
-        //
+        $themes = Theme::all();
+        return view('pages.theme.index', compact('themes'));
     }
 
     /**

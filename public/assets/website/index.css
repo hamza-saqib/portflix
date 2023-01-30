@@ -1,0 +1,139 @@
+	
+	/*home*/
+
+.header_start{
+	background-color: blue;
+}
+
+.my_account a.nav-link:hover{
+	
+	background-color: black;
+	color: white;
+}
+
+
+.header_font {
+	font-size: 19px;
+
+}
+
+.slider_grey{
+	background-color: #f5f5f5 ;
+}
+
+.section:after{
+	background-color: blue;
+	content: "";
+	display: block;
+	width: 70px;
+	height: 3px;
+	margin-top: 3%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#service_bd_color{
+	background-color: black; 
+}
+.card_bg_clr{
+	background-color: black;
+	color: white;
+}
+
+.blog_card_bg_clr{
+	background-color: #f5f5f5 ;
+}
+
+
+.footer_bg_wall{
+	background-color: #151516;	
+}
+.foot_section{
+	color: white;
+}
+.foot_section:after{
+	background-color: blue;
+	content: "";
+	display: block;
+	width: 30%;
+	height: 3px;
+	margin-top: 6%;
+	margin-bottom: 1%;
+	
+}
+
+.footer-menu{
+	color: grey;
+}
+.footer-menu li{
+	list-style: none;
+}
+.footer-menu li a{
+
+	text-decoration: none;
+	color: grey;
+}
+.footer-menu li a:hover{
+	color: blue;
+}
+.contact_coloring{
+	color: grey;
+} 
+
+.contact_coloring:hover{
+	color: blue;
+}
+.footer_submit_clr{
+	background-color: blue;
+	color: white;
+}
+
+.footer_end_bg_wall{
+	background-color: #151516;
+}
+
+.footer_end_bg_wall{
+	background-color: blue;
+	
+}
+
+	/*about*/
+
+.about_bg_clr{
+	background-color: #f5f5f5;
+}
+
+.about_card_bg_clr{
+	background-color: #E9E6E6;
+}
+.about_card_bg_clr:hover{
+	background-color: red;
+	color: white;
+}
+
+
+/*Profile_details _page*/
+.profile_details{
+	list-style: none;
+}
+.profile_bg_clr{
+	background-color: #F5F5F5;
+}
+
+
+
+/* themes_page*/
+.themes_second_nav{
+	background-color: black;
+}
+
+.themes_second_nav_menu a.nav-link:hover{
+	background-color: red;
+}
+
+/* themes preview--preview-section-bg-clr*/
+
+.preview-section-bg-clr{
+	background-color: #EAEBEB;
+}

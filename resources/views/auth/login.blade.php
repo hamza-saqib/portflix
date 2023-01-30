@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
+    {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +69,35 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-5 profile_bg_clr p-5">
+                <h4 class="text-center">Login</h4>
+                <p class="text-center">Please login using account detail bellow.</p>
+                <form class="row g-3 needs-validation" action="{{ route('login') }}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <div class="col-md-12 pt-4">
+                        <label for="validationCustom01" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="validationCustom01" name="email" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <label for="validationCustom02" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="validationCustom02" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-12 pt-4">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
