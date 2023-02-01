@@ -57,3 +57,75 @@ Route::controller(App\Http\Controllers\ProfileController::class)->prefix('profil
     Route::post('/store', 'store')->name('store');
     Route::get('/{profile}', 'show')->name('show');
 });
+
+//adminpanel
+Route::get('admin/login', [App\Http\Controllers\Adminpanel\AuthController::class, 'show'])->name('admin.login.show');
+Route::post('admin/login', [App\Http\Controllers\Adminpanel\AuthController::class, 'login'])->name('admin.login');
+Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
+
+    Route::post('admin/logout', [App\Http\Controllers\Adminpanel\AuthController::class, 'logout'])->name('logout');
+
+    //dashboard
+    Route::controller(App\Http\Controllers\Adminpanel\DashboardController::class)->name('dashboard')->group(function () {
+        Route::get('/', 'index');
+    });
+
+
+
+    // user
+    Route::controller(App\Http\Controllers\Adminpanel\UserController::class)->prefix('users')->name('user.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{user}', 'show')->name('show');
+        Route::get('/{user}/edit', 'edit')->name('edit');
+        Route::put('/{user}', 'update')->name('update');
+        Route::delete('/{user:id}', 'destroy')->name('destroy');
+    });
+
+
+
+    //blog
+    Route::controller(App\Http\Controllers\Adminpanel\BlogController::class)->prefix('blogs')->name('blog.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{blog}', 'show')->name('show');
+        Route::get('/{blog}/edit', 'edit')->name('edit');
+        Route::put('/{blog}', 'update')->name('update');
+        Route::delete('/{blog:id}', 'destroy')->name('destroy');
+    });
+
+    //blog-category
+    Route::controller(App\Http\Controllers\Adminpanel\BlogCategoryController::class)->prefix('blogs-category')->name('blog-category.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{blogCategory}', 'show')->name('show');
+        Route::get('/{blogCategory}/edit', 'edit')->name('edit');
+        Route::put('/{id}', 'update')->name('update');
+        Route::delete('/{blogCategory:id}', 'destroy')->name('destroy');
+    });
+
+    //themes
+    Route::controller(App\Http\Controllers\Adminpanel\ThemeController::class)->prefix('themes')->name('theme.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{theme}', 'show')->name('show');
+        Route::get('/{theme}/edit', 'edit')->name('edit');
+        Route::put('/{theme}', 'update')->name('update');
+        Route::delete('/{theme:id}', 'destroy')->name('destroy');
+    });
+
+    // admins
+    Route::controller(App\Http\Controllers\Adminpanel\AdminController::class)->prefix('admin-users')->name('admin-user.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{user}', 'show')->name('show');
+        Route::get('/{user}/edit', 'edit')->name('edit');
+        Route::put('/{user}', 'update')->name('update');
+        Route::delete('/{user:id}', 'destroy')->name('destroy');
+    });
+});
