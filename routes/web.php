@@ -30,6 +30,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//portfolio
+Route::controller(App\Http\Controllers\ProfileController::class)->name('portfolio.')->group(function () {
+    Route::get('/{username}', 'showPortfolio')->name('index');
+});
+
 //blog
 Route::controller(App\Http\Controllers\BlogController::class)->prefix('blogs')->name('blogs.')->group(function () {
     Route::get('/', 'index')->name('index');
@@ -52,10 +57,17 @@ Route::controller(App\Http\Controllers\ServicesController::class)->prefix('servi
 });
 
 //profile
-Route::controller(App\Http\Controllers\ProfileController::class)->prefix('profiles')->name('profiles.')->group(function () {
+Route::controller(App\Http\Controllers\ProfileController::class)->prefix('profiles')->name('profile.')->group(function () {
     Route::get('/basic', 'showBasicInfo')->name('basic');
-    Route::post('/store', 'store')->name('store');
-    Route::get('/{profile}', 'show')->name('show');
+    Route::put('/basic', 'updateBasicInfo')->name('basic.update');
+    Route::get('/educational', 'showEducationalInfo')->name('educational');
+    Route::put('/educational', 'updateEducationalInfo')->name('educational.update');
+    Route::get('/experience', 'showExperienceInfo')->name('experience');
+    Route::put('/experience', 'updatEexperienceInfo')->name('experience.update');
+    Route::get('/industry', 'showIndustryInfo')->name('industry');
+    Route::put('/industry', 'updateIndustryInfo')->name('industry.update');
+    Route::get('/services', 'showServicesInfo')->name('services');
+    Route::put('/services', 'updateServicesInfo')->name('services.update');
 });
 
 //adminpanel

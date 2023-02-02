@@ -4,10 +4,14 @@
 <div>
     <ul>
         <li>
-            <a href="{{route('profiles.basic')}}">profile setting</a>
+            <a href="{{route('profile.basic')}}">profile setting</a>
         </li>
         <li>
-            <a href="{{route('profiles.basic')}}">other setting</a>
+            <a href="{{route('profile.basic')}}">other setting</a>
+        </li>
+
+        <li>
+            <a href="{{route('portfolio.index', Auth::user()->username)}}">my portfolio</a>
         </li>
     </ul>
 </div>
