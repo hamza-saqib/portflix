@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
+            $table->string('username')->unique();
+            $table->string('website_url')->unique();
+            $table->string('gender')->nullable();
+            $table->string('bio')->nullable();
+
             $table->string('recovery_email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

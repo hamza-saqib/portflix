@@ -54,6 +54,7 @@ Route::controller(App\Http\Controllers\ServicesController::class)->prefix('servi
 //profile
 Route::controller(App\Http\Controllers\ProfileController::class)->prefix('profiles')->name('profiles.')->group(function () {
     Route::get('/basic', 'showBasicInfo')->name('basic');
+    Route::update('/update', 'showBasicInfo')->name('update');
     Route::post('/store', 'store')->name('store');
     Route::get('/{profile}', 'show')->name('show');
 });

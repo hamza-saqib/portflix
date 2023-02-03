@@ -31,6 +31,35 @@ class ProfileController extends Controller
     {
         //
     }
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'string|required',
+            'role' => 'string|required',
+            'password' => 'min:5|nullable',
+            'email' => 'string|required|unique:users,email,' . $id
+        ]);
+
+        //$user = \App\Models\User::find($id);
+        //$user = Auth::id();
+        $user = Auth::user()->id;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->username = $request->username;
+        $user->city = $request->city;
+        $user->country = $request->country;
+        $user->phone_number = $request->phone_number;
+        $user->date_of_birth = $request->date_of_birth;
+        $user->website_url = $request->website_url;
+        $user->gender = $request->gender;
+        $user->address = $request->address;
+        $user->bio = $request->bio;
+        if($request->filled('password')){
+            $user->password = $request->password;
+        }
+        $user->save();
+        return redirect()->back();
+    }
 
     /**
      * Display the specified resource.
@@ -51,7 +80,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
