@@ -45,6 +45,12 @@ Route::controller(App\Http\Controllers\BlogController::class)->prefix('blogs')->
 //theme
 Route::controller(App\Http\Controllers\ThemeController::class)->prefix('themes')->name('themes.')->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('/photography','photographyThemes')->name('photography-themes');
+    Route::get('/photographytemp1','photographyTemp1')->name('photographytemp1');
+    Route::get('/photographytemp2','photographyTemp2')->name('photographytemp2');
+    Route::get('/business','business')->name('business');
+    Route::get('/fashion','fashion')->name('fashion');
+    Route::get('/it','it')->name('it');
     Route::post('/store', 'store')->name('store');
     Route::get('/{theme}', 'show')->name('show');
 });

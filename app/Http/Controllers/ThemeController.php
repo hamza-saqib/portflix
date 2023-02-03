@@ -27,6 +27,32 @@ class ThemeController extends Controller
     {
         //
     }
+    public function photographyThemes()
+    {
+        return view('pages.theme.photography-themes');
+    }
+
+    public function photographyTemp1()
+    {
+        return view('pages.theme.photographytemp1');
+    }
+    public function photographyTemp2()
+    {
+        return view('pages.theme.photographytemp2');
+    }
+    public function business()
+    {
+        return view('pages.theme.business');
+        //return "business";
+    }
+    public function fashion()
+    {
+        return view("pages.theme.fashion");
+    }
+    public function it()
+    {
+        return view('pages.theme.it');
+    }
 
     /**
      * Store a newly created resource in storage.

@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="nav themes_second_nav_menu justify-content-center ">
-                        <a class="nav-link text-white active" aria-current="page" href="#">Business</a>
-                        <a class="nav-link text-white" href="photography_themes.html">Photography</a>
+                        <a class="nav-link text-white active" aria-current="page" href="pages.theme.photography-themes">Business</a>
+                        <a class="nav-link text-white" href="pages.theme.photography-themes">Photography</a>
                         <a class="nav-link text-white" href="#">Fashion Designing</a>
                         <a class="nav-link text-white " href="IT_themes.html">Information Technology</a>
                         <a class="nav-link text-white" href="#">Medical</a>
