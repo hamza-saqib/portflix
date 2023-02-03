@@ -17,7 +17,15 @@ class ThemeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->name(),
+            'files_path' => fake()->word(),
+            'summary' => fake()->sentence(),
+            'description' => fake()->sentence(),
+            'feature_image' => fake()->url(),
+            'author_name' => fake()->name(),
+            'category' => json_encode(['it', 'bussiness']),
+            'display_order' => fake()->numberBetween(2,32),
+            'slug' => fake()->slug(),
         ];
     }
 }

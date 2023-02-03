@@ -12,10 +12,19 @@ class ThemeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category)
     {
-        $themes = Theme::all();
+        if($category == 'all'){
+            $themes = Theme::paginate(6);
+        } else {
+            $themes = Theme::whereJsonContains('category', $category)->paginate(6);
+        }
         return view('pages.theme.index', compact('themes'));
+    }
+
+    public function showCategories()
+    {
+        return view('pages.theme.categories');
     }
 
     /**
@@ -27,32 +36,7 @@ class ThemeController extends Controller
     {
         //
     }
-    public function photographyThemes()
-    {
-        return view('pages.theme.photography-themes');
-    }
 
-    public function photographyTemp1()
-    {
-        return view('pages.theme.photographytemp1');
-    }
-    public function photographyTemp2()
-    {
-        return view('pages.theme.photographytemp2');
-    }
-    public function business()
-    {
-        return view('pages.theme.business');
-        //return "business";
-    }
-    public function fashion()
-    {
-        return view("pages.theme.fashion");
-    }
-    public function it()
-    {
-        return view('pages.theme.it');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -71,9 +55,10 @@ class ThemeController extends Controller
      * @param  \App\Models\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function show(Theme $theme)
+    public function show($slug)
     {
-        //
+        $theme = Theme::where('slug', $slug)->get()->first();
+        return view('pages.theme.show', compact('theme'));
     }
 
     /**

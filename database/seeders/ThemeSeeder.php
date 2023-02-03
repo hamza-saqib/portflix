@@ -14,6 +14,6 @@ class ThemeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Theme::factory(10)->create();
     }
 }

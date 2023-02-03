@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('files_path')->nullable();
+            $table->json('category')->nullable();
             $table->string('summary')->nullable();
             $table->string('feature_image')->nullable();
             $table->longText('description')->nullable();

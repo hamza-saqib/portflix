@@ -73,16 +73,17 @@
                     <a class="nav-link" href="{{route('about-us')}}">About US</a>
                 </li>
                 <li class="nav-item pl-3 dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{route('themes.index')}}" id="navbarDropdownMenuLink"
+                    <a class="nav-link dropdown-toggle" href="{route('themes.index', 'all')}}" id="navbarDropdownMenuLink"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Themes
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="{{route('themes.index')}}">Themes</a></li>
-                        <li><a class="dropdown-item" href="photography_themes.html">Photography</a></li>
-                        <li><a class="dropdown-item" href="">Business</a></li>
-                        <li><a class="dropdown-item" href="">Fashion Designing</a></li>
-                        <li><a class="dropdown-item" href="IT_themes.html">Information Technology</a></li>
+                        <li><a class="dropdown-item" href="{{route('themes.index', 'all')}}">All Themes</a></li>
+                        <li><a class="dropdown-item" href="{{route('themes.categories')}}">Themes by Category</a></li>
+                        <li><a class="dropdown-item" href="{{route('themes.index', 'photography')}}">Photography</a></li>
+                        <li><a class="dropdown-item" href="{{route('themes.index', 'business')}}">Business</a></li>
+                        <li><a class="dropdown-item" href="{{route('themes.index', 'fashion_design')}}">Fashion Designing</a></li>
+                        <li><a class="dropdown-item" href="{{route('themes.index', 'it')}}">Information Technology</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown pl-3">
