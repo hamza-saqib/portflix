@@ -32,7 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //portfolio
 Route::controller(App\Http\Controllers\ProfileController::class)->name('portfolio.')->group(function () {
-    Route::get('/{username}', 'showPortfolio')->name('index');
+    Route::get('my/{username}', 'showPortfolio')->name('index');
 });
 
 //blog
