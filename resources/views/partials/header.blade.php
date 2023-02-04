@@ -39,11 +39,14 @@
                             <li><a class="dropdown-item" href="{{route('login')}}">Sign In</a></li>
                             <li><a class="dropdown-item" href="{{route('register')}}">Create Account</a></li>
                             @else
+                            <li><a class="dropdown-item" href="{{route('home')}}">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="{{route('profile.basic')}}">Profile Setting</a></li>
                             <li><a class="dropdown-item" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
+
                             @endguest
                         </ul>
                     </li>
