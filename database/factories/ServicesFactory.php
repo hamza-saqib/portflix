@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,14 @@ class ServicesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->name(),
+            'slug' => fake()->slug(),
+            'summary' => fake()->sentence(),
+            'description' => fake()->sentence(),
+            'display_order' => fake()->numberBetween(1, 200),
+            'thumbnail' => null,
+            'min_price' => fake()->numberBetween(1000, 20000000),
+            'user_id' => User::pluck('id')->random(),
         ];
     }
 }

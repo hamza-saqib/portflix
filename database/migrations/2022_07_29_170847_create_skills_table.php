@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('level')->nullable();
             $table->integer('display_order')->nullable();
+            $table->integer('percentage')->nullable();
+            $table->foreignId('user_id')->default(1);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

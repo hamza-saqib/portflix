@@ -10,7 +10,8 @@ use Illuminate\Support\Str;
 class ProfileController extends Controller
 {
     public function showPortfolio()
-    {   $user = Auth::user();
+    {
+        $user = Auth::user();
         return view('themes.'.$user->selected_theme_path.'.index', compact('user'));
     }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,12 @@ class TestimonialFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'customer_name' => fake()->name(),
+            'message' => fake()->sentence(),
+            'issue_date' => fake()->date(),
+            'related_project' => fake()->boolean(),
+            'display_order' => fake()->numberBetween(1, 200),
+            'user_id' => User::pluck('id')->random(),
         ];
     }
 }

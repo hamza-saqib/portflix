@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('recovery_email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('tagline')->nullable();
+            $table->string('company_name')->default('Your Company');
 
             $table->date('date_of_birth')->nullable();
             $table->string('gender')->nullable();
@@ -43,7 +45,9 @@ return new class extends Migration
             $table->string('instagram')->nullable();
             $table->string('fiverr')->nullable();
             $table->string('upwork')->nullable();
+            $table->string('pinterest')->nullable();
 
+            $table->foreignId('theme_id')->default(1);
 
             $table->rememberToken();
             $table->timestamps();

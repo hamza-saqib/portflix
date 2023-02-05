@@ -14,6 +14,6 @@ class TestimonialSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Testimonial::factory(10)->create();
     }
 }

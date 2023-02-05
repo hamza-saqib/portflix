@@ -31,8 +31,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //portfolio
-Route::controller(App\Http\Controllers\ProfileController::class)->name('portfolio.')->group(function () {
-    Route::get('my/{username}', 'showPortfolio')->name('index');
+Route::controller(App\Http\Controllers\ProfileController::class)->prefix('portfolio')->name('portfolio.')->group(function () {
+    Route::get('/{username}', 'showPortfolio')->name('index');
 });
 
 //blog

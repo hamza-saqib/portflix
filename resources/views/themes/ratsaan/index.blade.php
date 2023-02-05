@@ -46,7 +46,7 @@
     <nav class="navbar navbar-expand-lg bg-transprent py-4 fixed-top navigation" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <h2 class="logo">Ratsaan.</h2>
+                <h2 class="logo">{{$user->company_name}}</h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
                 aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,9 +67,9 @@
                 </ul>
 
                 <ul class="list-inline mb-0 ml-lg-4 nav-social">
-                    <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="ti-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="ti-pinterest"></i></a></li>
+                    <li class="list-inline-item"><a href="{{$user->facebook}}" target="_blank"><i class="ti-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="{{$user->twitter}}" target="_blank"><i class="ti-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="{{$user->pinterest}}" target="_blank"><i class="ti-pinterest"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -115,13 +115,8 @@
                             <h2><i class="ti-minus"></i>Myself</h2>
                         </div>
                         <div class="col-lg-8">
-                            <p class="text-white-50 text-md">Hello! I’m <span class="text-white">Willium
-                                    stephen</span> a self-taught & award winning Digital <span
-                                    class="text-white">Designer & Developer</span> with over <span
-                                    class="text-white">five years</span> work experience.</p>
-                            <p class="text-white-50 text-md">Love the Web and the work we do.I work closely with my
-                                clients to deliver the best <span class="text-white">possible solutions</span> for
-                                their needs</p>
+                            <p class="text-white-50 text-md">{{$user->bio}}</p>
+
                         </div>
 
                     </div>
@@ -138,14 +133,12 @@
                             </p>
 
                             <ul class="list-unstyled lh-45">
-                                <li> <i class="ti-check mr-3 text-color"></i><span class="text-white-50">Web
-                                        Designing</span> - HTML/CSS</li>
-                                <li><i class="ti-check mr-3 text-color"></i><span class="text-white-50">Graphic
-                                        Design</span> - UI/UX</li>
-                                <li><i class="ti-check mr-3 text-color"></i><span class="text-white-50">Web
-                                        Development</span> - WORDPRESS/PHP</li>
-                                <li><i class="ti-check mr-3 text-color"></i><span class="text-white-50">Application
-                                        Dev</span> - ANDROID/ IOS</li>
+                                @foreach ($user->skills as $skill)
+                                <li>
+                                    <i class="ti-check mr-3 text-color"></i>
+                                    {{$skill->name}}
+                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -170,79 +163,21 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($user->skills as $skill)
                 <div class="col-lg-6 col-md-6">
                     <div class="skill-bar mb-4 mb-lg-0">
                         <div class="mb-4 text-right">
-                            <h4 class="font-weight-normal">Html/Css </h4>
+                            <h4 class="font-weight-normal">{{$skill->name}}</h4>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar" data-percent="80">
-                                <span class="percent-text"><span class="count">80</span>%</span>
+                            <div class="progress-bar" data-percent="{{$skill->percentage}}">
+                                <span class="percent-text"><span class="count">{{$skill->percentage}}</span>%</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="skill-bar mb-4 mb-lg-0">
-                        <div class="mb-4 text-right">
-                            <h4 class="font-weight-normal">WordPress/PHP</h4>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="95">
-                                <span class="percent-text"><span class="count">95</span>%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
-                <div class="col-lg-6 col-md-6">
-                    <div class="skill-bar mb-4 mb-lg-0">
-                        <div class="mb-4 text-right">
-                            <h4 class="font-weight-normal">Graphics Design </h4>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="70">
-                                <span class="percent-text"><span class="count">70</span>%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="skill-bar mb-4 mb-lg-0">
-                        <div class="mb-4 text-right">
-                            <h4 class="font-weight-normal">Marketing</h4>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="85">
-                                <span class="percent-text"><span class="count">85</span>%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="skill-bar mb-4 mb-lg-0">
-                        <div class=" mb-4 text-right">
-                            <h4 class="font-weight-normal">Branding</h4>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="60">
-                                <span class="percent-text"><span class="count">60</span>%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="skill-bar mb-4 mb-lg-0">
-                        <div class=" mb-4 text-right">
-                            <h4 class="font-weight-normal">Woo-Commerce</h4>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="82">
-                                <span class="percent-text"><span class="count">82</span>%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -252,6 +187,7 @@
     <!-- Service start -->
     <section class="section bg-gray" id="service" data-aos="fade-up">
         <div class="container">
+
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center">
@@ -263,14 +199,16 @@
             </div>
 
             <div class="row no-gutters">
+                @foreach ($user->services as $service)
                 <div class="col-lg-4 col-md-6">
                     <div class="card p-5 rounded-0">
                         <i class="ti-layers text-lg-2 text-muted"></i>
-                        <h3 class="my-4 text-capitalize">Graphics Branding Design</h3>
-                        <p>It can change the way we feel about a company and the products & services they offer.</p>
+                        <h3 class="my-4 text-capitalize">{{$service->name}}</h3>
+                        <p>{{$service->summary}}</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                @endforeach
+                {{-- <div class="col-lg-4 col-md-6">
                     <div class="card p-5 rounded-0">
                         <i class="ti-layout text-lg-2 text-muted"></i>
                         <h3 class="my-4 text-capitalize">Front End Design Development</h3>
@@ -305,7 +243,7 @@
                         <h3 class="my-4 text-capitalize">Wordpress Development</h3>
                         <p>It can change the way we feel about a company and the products & services they offer.</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
 
             <div class="row align-items-center mt-5" data-aos="fade-up">
@@ -438,60 +376,23 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="testimonial-slider">
+                        @foreach ($user->testimonials as $testimonial)
                         <div class="testimonial-item position-relative">
                             <i class="ti-quote-left text-white-50"></i>
                             <div class="testimonial-content">
-                                <p class="text-md mt-3">They do this through collaboration between our strategists,
-                                    designers and technologists.They craft beautiful and unique digital
-                                    experiences.Unlimited power and customization possibilities.Pixel perfect design &
-                                    clear code delivered to you.</p>
+                                <p class="text-md mt-3">{{$testimonial->message}}</p>
 
                                 <div class="media mt-5 align-items-center">
                                     <img src="images/about/2.jpg" alt=""
                                         class="img-fluid  rounded-circle align-self-center mr-4">
                                     <div class="media-body">
-                                        <h3 class="mb-0">John Smith</h3>
-                                        <span class="text-muted">Creative Designer</span>
+                                        <h3 class="mb-0">{{$testimonial->customer_name}}</h3>
+                                        {{-- <span class="text-muted">Creative Designer</span> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="testimonial-item position-relative">
-                            <i class="ti-quote-left text-white-50"></i>
-                            <div class="testimonial-content">
-                                <p class="text-md mt-3">They do this through collaboration between our strategists,
-                                    designers and technologists.They craft beautiful and unique digital
-                                    experiences.Unlimited power and customization possibilities.Pixel perfect design &
-                                    clear code delivered to you.</p>
-
-                                <div class="media mt-5 align-items-center">
-                                    <img src="images/about/3.jpg" alt=""
-                                        class="img-fluid  rounded-circle align-self-center mr-4">
-                                    <div class="media-body">
-                                        <h3 class="mb-0">Smith Austin</h3>
-                                        <span class="text-muted">Developer</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-item position-relative">
-                            <i class="ti-quote-left text-white-50"></i>
-                            <div class="testimonial-content">
-                                <p class="text-md mt-3">They do this through collaboration between our strategists,
-                                    designers and technologists.They craft beautiful and unique digital
-                                    experiences.Unlimited power and customization possibilities.Pixel perfect design &
-                                    clear code delivered to you.</p>
-
-                                <div class="media mt-5 align-items-center">
-                                    <img src="images/about/3.jpg" alt=""
-                                        class="img-fluid  rounded-circle align-self-center mr-4">
-                                    <div class="media-body">
-                                        <h3 class="mb-0">Mike jack</h3>
-                                        <span class="text-muted">Marketer</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
