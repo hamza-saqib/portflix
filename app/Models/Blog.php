@@ -24,7 +24,7 @@ class Blog extends Model
         'image_alt',
         'is_active',
         'blog_category_id',
-        'admin_id',
+        'user_id',
     ];
 
     public function getRouteKeyName()

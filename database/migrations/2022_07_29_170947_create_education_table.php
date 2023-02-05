@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('education', function (Blueprint $table) {
             $table->id();
+            $table->string('degree');
             $table->string('institute_name');
-            $table->string('institute_level');
+            $table->string('major_subject');
+            $table->string('institute_level')->nullable();
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->boolean('is_currently_studying')->default(false);

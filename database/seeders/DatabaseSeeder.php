@@ -9,6 +9,7 @@ use App\Models\Theme;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +20,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Storage::makeDirectory('public/images/users');
+        Storage::makeDirectory('public/images/blogs');
+
         Theme::create([
             'name' => 'Ratsaan',
             'slug' => 'ratsaan',
@@ -41,10 +45,12 @@ class DatabaseSeeder extends Seeder
             'twiter' => 'https://www.twiter.com/'
         ]);
 
-        \App\Models\Theme::factory(20)->create();
-        \App\Models\Skill::factory(20)->create();
-        \App\Models\Services::factory(10)->create();
-        \App\Models\Testimonial::factory(10)->create();
+        \App\Models\Theme::factory(5)->create();
+        \App\Models\Skill::factory(5)->create();
+        \App\Models\Services::factory(5)->create();
+        \App\Models\Testimonial::factory(5)->create();
+        \App\Models\BlogCategory::factory(10)->create();
+        \App\Models\Blog::factory(10)->create();
 
         // \App\Models\User::factory(10)->create();
 

@@ -21,8 +21,12 @@ class ProfileController extends Controller
     }
 
     public function showEducationalInfo()
-    {   $user = Auth::user();
-        return view('pages.profile.educational_info', compact('user'));
+    {
+        $universities = ['uni 1','uni 2'];
+        $degrees = ['degree 1','degree 2'];
+        $major_subjects = ['major 1','major 2'];
+        $user = Auth::user();
+        return view('pages.profile.educational_info', compact('user', 'universities', 'degrees', 'major_subjects'));
     }
 
     public function showExperienceInfo()

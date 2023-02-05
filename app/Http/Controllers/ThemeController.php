@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Theme;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ThemeController extends Controller
 {
@@ -27,14 +29,23 @@ class ThemeController extends Controller
         return view('pages.theme.categories');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function showFavouriteThemes()
     {
-        //
+        $themes = Theme::paginate(6);
+        return view('pages.theme.wishlist', compact('themes'));
+    }
+
+    public function ativateTheme($id)
+    {
+        $theme = Theme::find($id);
+        if($theme){
+            $user = User::find(Auth::id());
+            $user->theme_id = $theme->id;
+            $user->selected_theme_path = $theme->files_path;
+            $user->save();
+            return redirect()->back()->with(['message'=>'activated']);
+        }
+        return redirect()->back()->with(['message'=>'activated']);
     }
 
 

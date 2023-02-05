@@ -33,8 +33,8 @@ return new class extends Migration
 
             $table->foreignId('blog_category_id');
             $table->foreign('blog_category_id')->references('id')->on('blog_categories');
-            $table->foreignId('admin_id');
-            $table->foreign('admin_id')->references('id')->on('admins');
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->softDeletes();
             $table->timestamps();

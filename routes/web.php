@@ -45,6 +45,8 @@ Route::controller(App\Http\Controllers\BlogController::class)->prefix('blogs')->
 //theme
 Route::controller(App\Http\Controllers\ThemeController::class)->prefix('themes')->name('themes.')->group(function () {
     Route::get('/categories', 'showCategories')->name('categories');
+    Route::get('/favourite', 'showFavouriteThemes')->name('favourite')->middleware('auth');
+    Route::get('/activate/{id}', 'ativateTheme')->name('activate')->middleware('auth');
     Route::get('/{category}', 'index')->name('index');
     Route::get('/show/{slug}', 'show')->name('show');
 });

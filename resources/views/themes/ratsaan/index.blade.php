@@ -414,19 +414,20 @@
             </div>
 
             <div class="row">
+                @foreach ($user->blogs as $blog)
                 <div class="col-lg-4 col-md-6">
                     <div class="position-relative blog-item mb-5 mb-lg-0">
-                        <img src="images/blog/img1.jpg" alt="blog-1" class="img-fluid">
+                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/blog/img1.jpg" alt="blog-1" class="img-fluid">
 
                         <div class="blog-item-meta mb-3">
-                            <span><i class="ti-user mr-2"></i>by Admin</span>
+                            <span><i class="ti-user mr-2"></i>by {{$blog->author_name}}</span>
                             <span class="text-muted mx-2"> | </span>
                             <span class="text-white-50">Photography</span>
                         </div>
 
                         <div class="pl-4">
                             <a href="blog-single.html">
-                                <h3 class="mb-4 ">20 Best Startup Ideas for Designers</h3>
+                                <h3 class="mb-4 ">{{$blog->title}}</h3>
                             </a>
 
                             <a href="blog-single.html" class="learn-more text-uppercase text-sm"><i
@@ -434,43 +435,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="position-relative blog-item mb-5 mb-lg-0">
-                        <img src="images/blog/img3.jpg" alt="blog-1" class="img-fluid">
-
-                        <div class="blog-item-meta mb-3">
-                            <span><i class="ti-user mr-2"></i>by Admin</span>
-                            <span class="text-muted mx-2"> | </span>
-                            <span class="text-white-50">Branding</span>
-                        </div>
-                        <div class="pl-4">
-                            <a href="blog-single.html">
-                                <h3 class="mb-4">How to Incorporate Branding into Your Event</h3>
-                            </a>
-
-                            <a href="blog-single.html" class="learn-more text-uppercase text-sm"><i
-                                    class="ti-arrow-right mr-2 show"></i>Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="position-relative blog-item mb-5 mb-lg-0">
-                        <img src="images/blog/img1.jpg" alt="blog-1" class="img-fluid">
-
-                        <div class="blog-item-meta mb-3">
-                            <span><i class="ti-user mr-2"></i>by Admin</span>
-                            <span class="text-muted mx-2"> | </span>
-                            <span class="text-white-50">Marketing</span>
-                        </div>
-                        <div class="pl-4">
-                            <a href="blog-single.html">
-                                <h3 class="mb-4 ">The Value of Video in Content Marketing</h3>
-                            </a>
-                            <a href="blog-single.html" class="learn-more text-uppercase text-sm"><i
-                                    class="ti-arrow-right mr-2"></i>Learn more</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

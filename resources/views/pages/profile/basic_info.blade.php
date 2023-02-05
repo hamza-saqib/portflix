@@ -87,17 +87,29 @@
                             <label for="validationCustom08" class="form-label">Gender</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="gender"
-                                    id="inlineRadio1" value="Male">
+                                    id="inlineRadio1" value="Male"
+                                    @if ($user->gender == 'Male')
+                                    checked
+                                    @endif
+                                    >
                                 <label class="form-check-label" for="inlineRadio1">Male</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="gender"
-                                    id="inlineRadio2" value="Female">
+                                    id="inlineRadio2" value="Female"
+                                    @if ($user->gender == 'Female')
+                                    checked
+                                    @endif
+                                    >
                                 <label class="form-check-label" for="inlineRadio2">Femal</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="gender"
-                                    id="inlineRadio3" value="Other">
+                                    id="inlineRadio3" value="Other"
+                                    @if ($user->gender == 'Other')
+                                    checked
+                                    @endif
+                                    >
                                 <label class="form-check-label" for="inlineRadio3">Other</label>
                             </div>
                         </div>
@@ -112,7 +124,7 @@
 
 
 
-                        <div class="col-12 pt-4">
+                        {{-- <div class="col-12 pt-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
                                     required>
@@ -123,7 +135,7 @@
                                     You must agree before submitting.
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-12 pt-4">
                             <button class="btn btn-primary" type="submit">Submit form</button>
                         </div>
