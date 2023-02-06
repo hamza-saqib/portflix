@@ -23,7 +23,7 @@
                 <h2>Theme Management</h2>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.html">Themes</a>
+                        <a href="{{route('admin.theme.index')}}">Themes</a>
                     </li>
                     <li class="active">
                         <strong>List</strong>

@@ -7,6 +7,8 @@
 @endsection
 
 @section('other-css')
+    <!-- datatable -->
+    <link href="{{ asset('assets/adminpanel') }}/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -18,10 +20,10 @@
 
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-sm-4">
-                <h2>Oders Management</h2>
+                <h2>Blogs Management</h2>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.html">Oders</a>
+                        <a href="{{route('admin.blog.index')}}">Blogs</a>
                     </li>
                     <li class="active">
                         <strong>List</strong>
@@ -132,6 +134,11 @@
 
 
 @section('custom-script')
+    <!-- Sweet alert -->
+    <script src="{{ asset('assets/adminpanel') }}/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- datatables -->
+    <script src="{{ asset('assets/adminpanel') }}/js/plugins/dataTables/datatables.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $('.dataTables-example').DataTable({

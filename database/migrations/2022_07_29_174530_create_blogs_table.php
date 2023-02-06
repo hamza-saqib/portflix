@@ -33,7 +33,7 @@ return new class extends Migration
 
             $table->foreignId('blog_category_id');
             $table->foreign('blog_category_id')->references('id')->on('blog_categories');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->default(1);
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->softDeletes();

@@ -21,7 +21,7 @@
                 <h2>Blog Management</h2>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.html">Blog</a>
+                        <a href="{{route('admin.blog.index')}}">Blog</a>
                     </li>
                     <li class="active">
                         <strong>Edit</strong>
@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-8">
                 <div class="title-action">
-                    <a href="{{ route('admin.product.index') }}" class="btn btn-primary">Show List</a>
+                    <a href="{{ route('admin.blog.index') }}" class="btn btn-primary">Show List</a>
                 </div>
             </div>
         </div>

@@ -21,7 +21,7 @@
                 <h2>Blog Management</h2>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.html">Blog</a>
+                        <a href="{{route('admin.blog.index')}}">Blog</a>
                     </li>
                     <li class="active">
                         <strong>Create</strong>

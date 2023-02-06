@@ -33,6 +33,16 @@ class DatabaseSeeder extends Seeder
             'display_order' => 1,
         ]);
 
+        Theme::create([
+            'name' => 'Martyn',
+            'slug' => 'martyn',
+            'files_path' => 'martyn',
+            'summary' => 'Creating a professional, modern and sophisticated online resume website is easy with Martyn CV / Resume / Personal Portfolio / One page. Martyn CV / Resume HTML Template is a perfect solution for professional resume / cv / portfolio and personal website.',
+            'description' => 'Martyn – Creating a professional, modern and sophisticated online resume website is easy with Martyn CV / Resume / Personal Portfolio / One page. Martyn CV / Resume HTML Template is a perfect solution for professional resume / cv / portfolio and personal website. it comes with a lot of useful features. It is easy to customize this template for any of Your website needs.',
+            'author_name' => 'Az_Template',
+            'display_order' => 2,
+        ]);
+
         User::create([
             'name' => 'Maria Anwar',
             'username' => 'maria-anwar',

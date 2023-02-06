@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::where('user_id', 1)->paginate(6);
         return view('pages.blog.index', compact('blogs'));
     }
 
@@ -47,7 +47,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        //
+        return view('pages.blog.show', compact('blog'));
     }
 
     /**

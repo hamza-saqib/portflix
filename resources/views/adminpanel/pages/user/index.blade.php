@@ -23,7 +23,7 @@
                 <h2>User Management</h2>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.html">User</a>
+                        <a href="{{route('admin.user.index')}}">User</a>
                     </li>
                     <li class="active">
                         <strong>List</strong>
