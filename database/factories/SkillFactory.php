@@ -18,7 +18,10 @@ class SkillFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'name' => fake()->randomElement([
+                'Web Designing', 'Graphic Designing', 'App Development', 'IT Consultancy',
+                'Content Writing', 'Marketing', 'V Bloging', 'Dedicated Resources', 'PHP', 'Java', 'REST APIs', 'Nodejs', 'React Native'
+            ]),
             'level' => fake()->word(),
             'percentage' => fake()->numberBetween(1, 100),
             'display_order' => fake()->numberBetween(1, 200),

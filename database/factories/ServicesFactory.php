@@ -18,7 +18,10 @@ class ServicesFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'name' => fake()->randomElement([
+                'Web Designing', 'Graphic Designing', 'App Development', 'IT Consultancy',
+                'Content Writing', 'Marketing', 'V Bloging', 'Dedicated Resources'
+            ]),
             'slug' => fake()->slug(),
             'summary' => fake()->sentence(),
             'description' => fake()->sentence(),

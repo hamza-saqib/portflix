@@ -23,6 +23,9 @@ return new class extends Migration
             $table->date('end_date')->nullable();
             $table->boolean('is_currently_studying')->default(false);
             $table->integer('display_order')->nullable();
+            $table->longText('description')->nullable();
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Education;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -83,6 +84,40 @@ class ProfileController extends Controller
     }
 
     public function updateEducationalInfo(Request $request){
+
+        $universities = $request->input('universities');
+        $degrees = $request->input('degrees');
+        $major_subjects = $request->input('major_subjects');
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+        $descriptions = $request->input('descriptions');
+        $is_currently_studying = $request->input('is_currently_studying');
+
+        $education = Education::where('user_id', Auth::id())->get()->first();
+
+        if($education){
+            $education->degree = $degrees[0];
+            $education->institute_name = $universities[0];
+            $education->major_subject = $major_subjects[0];
+            $education->start_date = $start_date[0];
+            $education->end_date = $end_date[0];
+            $education->description = $descriptions[0];
+            $education->is_currently_studying = is_null($is_currently_studying) ? false : true;
+
+            $education->save();
+        } else {
+            Education::create([
+                'degree' => $degrees[0],
+                'institute_name' => $universities[0],
+                'major_subject' => $major_subjects[0],
+                'institute_level' => 'University',
+                'start_date' => $start_date[0],
+                'end_date' => $end_date[0],
+                'description' => $descriptions[0],
+                'is_currently_studying' => is_null($is_currently_studying) ? false : true,
+                'user_id' => Auth::id()
+            ]);
+        }
 
         return redirect()->back()->with(['message'=>'Successfully updated !']);
     }
