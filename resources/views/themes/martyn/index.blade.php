@@ -16,12 +16,12 @@
     <title>Martyn CV - Resume / CV / Portfolio & vCard HTML5 Template</title>
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/favicon.png">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/favicon.png">
     <!-- Animation CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/animate.css">
     <!-- Latest Bootstrap min CSS -->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/bootstrap/css/bootstrap.min.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/bootstrap/css/bootstrap.min.css">
     <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
@@ -29,31 +29,27 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
         rel="stylesheet">
     <!-- Icon Font CSS -->
-    <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/ionicons.min.css">
-    <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/themify-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/themify-icons.css">
     <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/all.min.css">
     <!-- Flaticon Font CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/flaticon.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/flaticon.css">
     <!--- owl carousel CSS-->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/owlcarousel/css/owl.carousel.min.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/owlcarousel/css/owl.carousel.min.css">
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/owlcarousel/css/owl.theme.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/owlcarousel/css/owl.theme.css">
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/owlcarousel/css/owl.theme.default.min.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/owlcarousel/css/owl.theme.default.min.css">
     <!-- Magnific Popup CSS -->
-    <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/magnific-popup.css">
     <!-- Scrollbar Css -->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/jquery.mCustomScrollbar.min.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/jquery.mCustomScrollbar.min.css">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/style.css">
-    <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/responsive.css">
 
 </head>
 
@@ -77,13 +73,13 @@
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand page-scroll" href="#home_section">
                     <img class="logo_light"
-                        src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/logo_white.png"
+                        src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/logo_white.png"
                         alt="logo" />
                     <img class="logo_dark"
-                        src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/logo_dark.png"
+                        src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/logo_dark.png"
                         alt="logo" />
                     <img class="logo_default"
-                        src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/logo_dark.png"
+                        src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/logo_dark.png"
                         alt="logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -92,13 +88,13 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <a class="navbar-brand page-scroll" href="#home_section">
                         <img class="logo_light"
-                            src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/logo_white.png"
+                            src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/logo_white.png"
                             alt="logo" />
                         <img class="logo_dark"
-                            src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/logo_dark.png"
+                            src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/logo_dark.png"
                             alt="logo" />
                         <img class="logo_default"
-                            src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/logo_dark.png"
+                            src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/logo_dark.png"
                             alt="logo" />
                     </a>
                     <ul class="navbar-nav">
@@ -178,7 +174,7 @@
                     </div>
                     <div class="col-xl-5 col-md-5">
                         <div class="banner_img animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                            <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/my_image.png"
+                            <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/my_image.png"
                                 alt="my_image" />
                         </div>
                     </div>
@@ -187,11 +183,16 @@
         </div>
         <div class="social_banner social_vertical">
             <ul class="list_none social_icons text-center">
-                <li><a href="{{$user->facebook}}" target="_blank" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                <li><a href="{{$user->twiter}}" target="_blank" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                <li><a href="{{$user->twiter}}" target="_blank" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
-                <li><a href="{{$user->twiter}}" target="_blank" class="sc_youtube"><i class="ion-social-youtube-outline"></i></a></li>
-                <li><a href="{{$user->instagram}}" target="_blank" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a></li>
+                <li><a href="{{ $user->facebook }}" target="_blank" class="sc_facebook"><i
+                            class="ion-social-facebook"></i></a></li>
+                <li><a href="{{ $user->twiter }}" target="_blank" class="sc_twitter"><i
+                            class="ion-social-twitter"></i></a></li>
+                <li><a href="{{ $user->twiter }}" target="_blank" class="sc_google"><i
+                            class="ion-social-googleplus"></i></a></li>
+                <li><a href="{{ $user->twiter }}" target="_blank" class="sc_youtube"><i
+                            class="ion-social-youtube-outline"></i></a></li>
+                <li><a href="{{ $user->instagram }}" target="_blank" class="sc_instagram"><i
+                            class="ion-social-instagram-outline"></i></a></li>
             </ul>
         </div>
     </section>
@@ -203,7 +204,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="about_img animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/about_img.png"
+                        <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/about_img.png"
                             alt="about_img" />
                     </div>
                 </div>
@@ -376,12 +377,12 @@
                         <li class="grid_item web-design">
                             <div class="portfolio_item" data-tilt>
                                 <a href="#" class="image_link">
-                                    <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item_small1.jpg"
+                                    <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item_small1.jpg"
                                         alt="image">
                                 </a>
                                 <div class="portfolio_content">
                                     <div class="link_container">
-                                        <a href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item1.jpg"
+                                        <a href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item1.jpg"
                                             class="image_popup"><i class="ion-image"></i></a>
                                         <a href="portfolio-detail-white.html"><i class="ion-plus"></i></a>
                                     </div>
@@ -395,12 +396,12 @@
                         <li class="grid_item brands web-design development">
                             <div class="portfolio_item" data-tilt>
                                 <a href="#" class="image_link">
-                                    <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item_small2.jpg"
+                                    <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item_small2.jpg"
                                         alt="image">
                                 </a>
                                 <div class="portfolio_content">
                                     <div class="link_container">
-                                        <a href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item2.jpg"
+                                        <a href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item2.jpg"
                                             class="image_popup"><i class="ion-image"></i></a>
                                         <a href="portfolio-detail-white.html"><i class="ion-plus"></i></a>
                                     </div>
@@ -417,19 +418,19 @@
                                     data-loop="false" data-animate-in="fadeIn" data-animate-out="fadeOut"
                                     data-autoplay-timeout="3000" data-items="1">
                                     <a href="#" class="image_link">
-                                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item_small3.jpg"
+                                        <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item_small3.jpg"
                                             alt="image">
                                     </a>
                                     <a href="#" class="image_link">
-                                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item_small4.jpg"
+                                        <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item_small4.jpg"
                                             alt="image">
                                     </a>
                                 </div>
                                 <div class="portfolio_content">
                                     <div class="link_container">
-                                        <a href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item3.jpg"
+                                        <a href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item3.jpg"
                                             class="image_popup"><i class="ion-images"></i></a>
-                                        <a href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item4.jpg"
+                                        <a href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item4.jpg"
                                             class="image_popup d-none"></a>
                                         <a href="portfolio-detail-white.html"><i class="ion-plus"></i></a>
                                     </div>
@@ -443,12 +444,12 @@
                         <li class="grid_item brands development">
                             <div class="portfolio_item" data-tilt>
                                 <a href="#" class="image_link">
-                                    <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item_small5.jpg"
+                                    <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item_small5.jpg"
                                         alt="image">
                                 </a>
                                 <div class="portfolio_content">
                                     <div class="link_container">
-                                        <a href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item5.jpg"
+                                        <a href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item5.jpg"
                                             class="image_popup"><i class="ion-image"></i></a>
                                         <a href="portfolio-detail-white.html"><i class="ion-plus"></i></a>
                                     </div>
@@ -462,12 +463,12 @@
                         <li class="grid_item brands web-design development">
                             <div class="portfolio_item" data-tilt>
                                 <a href="#" class="image_link">
-                                    <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item_small6.jpg"
+                                    <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item_small6.jpg"
                                         alt="image">
                                 </a>
                                 <div class="portfolio_content">
                                     <div class="link_container">
-                                        <a href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item6.jpg"
+                                        <a href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item6.jpg"
                                             class="image_popup"><i class="ion-image"></i></a>
                                         <a href="portfolio-detail-white.html"><i class="ion-plus"></i></a>
                                     </div>
@@ -481,12 +482,12 @@
                         <li class="grid_item brands web-design development">
                             <div class="portfolio_item" data-tilt>
                                 <a href="#" class="image_link">
-                                    <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item_small7.jpg"
+                                    <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item_small7.jpg"
                                         alt="image">
                                 </a>
                                 <div class="portfolio_content">
                                     <div class="link_container">
-                                        <a href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/portfolio_item7.jpg"
+                                        <a href="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/portfolio_item7.jpg"
                                             class="image_popup"><i class="ion-image"></i></a>
                                         <a href="portfolio-detail-white.html"><i class="ion-plus"></i></a>
                                     </div>
@@ -617,29 +618,29 @@
                         data-dots="false" data-loop="true" data-autoplay="true"
                         data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "1199":{"items": "3"}}'>
                         @foreach ($user->testimonials as $testimonial)
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial_user">
-                                    <div class="testimonial_img">
-                                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/client_img1.jpg"
-                                            alt="client" />
+                            <div class="item">
+                                <div class="testimonial_box">
+                                    <div class="testimonial_user">
+                                        <div class="testimonial_img">
+                                            <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/client_img1.jpg"
+                                                alt="client" />
+                                        </div>
+                                        <div class="client_info">
+                                            <h6>{{ $testimonial->customer_name }}</h6>
+                                            <span>Developer</span>
+                                        </div>
                                     </div>
-                                    <div class="client_info">
-                                        <h6>{{$testimonial->customer_name}}</h6>
-                                        <span>Developer</span>
+                                    <div class="testi_meta">
+                                        <p>{{ $testimonial->message }}</p>
                                     </div>
-                                </div>
-                                <div class="testi_meta">
-                                    <p>{{$testimonial->message}}</p>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                         {{-- <div class="item">
                             <div class="testimonial_box">
                                 <div class="testimonial_user">
                                     <div class="testimonial_img">
-                                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/client_img2.jpg"
+                                        <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/client_img2.jpg"
                                             alt="client" />
                                     </div>
                                     <div class="client_info">
@@ -658,7 +659,7 @@
                             <div class="testimonial_box">
                                 <div class="testimonial_user">
                                     <div class="testimonial_img">
-                                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/client_img3.jpg"
+                                        <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/client_img3.jpg"
                                             alt="client" />
                                     </div>
                                     <div class="client_info">
@@ -677,7 +678,7 @@
                             <div class="testimonial_box">
                                 <div class="testimonial_user">
                                     <div class="testimonial_img">
-                                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/client_img4.jpg"
+                                        <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/client_img4.jpg"
                                             alt="client" />
                                     </div>
                                     <div class="client_info">
@@ -719,28 +720,30 @@
             </div>
             <div class="row justify-content-center animation" data-animation="fadeInUp" data-animation-delay="0.04s">
                 @foreach ($user->blogs as $blog)
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog_post">
-                        <div class="blog_img">
-                            <a href="blog-detail-white.html">
-                                <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/blog_small_img1.jpg"
-                                    alt="blog_small_img1">
-                            </a>
-                        </div>
-                        <div class="blog_content">
-                            <div class="blog_text">
-                                <div class="post_category"><a href="#">UI/UX Design</a></div>
-                                <h5 class="blog_title"><a href="blog-detail-white.html">{{$blog->title}} </a></h5>
-                                <ul class="list_none blog_meta">
-                                    <li><a href="#"><i class="ion-calendar"></i>{{$blog->created_at}}</a></li>
-                                    <li><a href="#"><i class="ion-chatboxes"></i>2 Comment</a></li>
-                                </ul>
-                                <p>{{$blog->summary}}</p>
-                                <a href="blog-detail-white.html" class="read_more">Read More</a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog_post">
+                            <div class="blog_img">
+                                <a href="blog-detail-white.html">
+                                    <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/blog_small_img1.jpg"
+                                        alt="blog_small_img1">
+                                </a>
+                            </div>
+                            <div class="blog_content">
+                                <div class="blog_text">
+                                    <div class="post_category"><a href="#">UI/UX Design</a></div>
+                                    <h5 class="blog_title"><a href="blog-detail-white.html">{{ $blog->title }} </a>
+                                    </h5>
+                                    <ul class="list_none blog_meta">
+                                        <li><a href="#"><i class="ion-calendar"></i>{{ $blog->created_at }}</a>
+                                        </li>
+                                        <li><a href="#"><i class="ion-chatboxes"></i>2 Comment</a></li>
+                                    </ul>
+                                    <p>{{ $blog->summary }}</p>
+                                    <a href="blog-detail-white.html" class="read_more">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -812,7 +815,7 @@
                     <div class="col-12 text-center">
                         <div class="footer_logo">
                             <a href="index.html"><img alt="logo"
-                                    src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/logo_dark.png"></a>
+                                    src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/logo_dark.png"></a>
                         </div>
                         <h6 class="widget_title pt-3">Subscribe Our Newsletter</h6>
                         <div class="newsletter_form newslattter_small">
@@ -827,12 +830,16 @@
                             </form>
                         </div>
                         <ul class="list_none social_icons pt-4">
-                            <li><a href="{{$user->facebook}}" target="_blank" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="{{$user->twiter}}" target="_blank" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                            <li><a href="{{$user->twiter}}" target="_blank" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
-                            <li><a href="{{$user->twiter}}" target="_blank" class="sc_youtube"><i class="ion-social-youtube-outline"></i></a>
+                            <li><a href="{{ $user->facebook }}" target="_blank" class="sc_facebook"><i
+                                        class="ion-social-facebook"></i></a></li>
+                            <li><a href="{{ $user->twiter }}" target="_blank" class="sc_twitter"><i
+                                        class="ion-social-twitter"></i></a></li>
+                            <li><a href="{{ $user->twiter }}" target="_blank" class="sc_google"><i
+                                        class="ion-social-googleplus"></i></a></li>
+                            <li><a href="{{ $user->twiter }}" target="_blank" class="sc_youtube"><i
+                                        class="ion-social-youtube-outline"></i></a>
                             </li>
-                            <li><a href="{{$user->instagram}}}}" target="_blank" class="sc_instagram"><i
+                            <li><a href="{{ $user->instagram }}}}" target="_blank" class="sc_instagram"><i
                                         class="ion-social-instagram-outline"></i></a></li>
                         </ul>
                     </div>
@@ -859,43 +866,40 @@
     <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
 
     <!-- Latest jQuery -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/jquery-1.12.4.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/jquery-1.12.4.min.js"></script>
     <!-- jquery-ui -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/jquery-ui.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/jquery-ui.js"></script>
     <!-- popper min js -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/popper.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/popper.min.js"></script>
     <!-- Latest compiled and minified Bootstrap -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/bootstrap/js/bootstrap.min.js">
-    </script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/bootstrap/js/bootstrap.min.js"></script>
     <!-- owl-carousel min js  -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/owlcarousel/js/owl.carousel.min.js">
-    </script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/owlcarousel/js/owl.carousel.min.js"></script>
     <!-- magnific-popup min js  -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/magnific-popup.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/magnific-popup.min.js"></script>
     <!-- waypoints min js  -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/waypoints.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/waypoints.min.js"></script>
     <!-- parallax js  -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/parallax.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/parallax.js"></script>
     <!-- countdown js  -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/jquery.countdown.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/jquery.countdown.min.js"></script>
     <!-- jquery.counterup.min js -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/jquery.counterup.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/jquery.counterup.min.js"></script>
     <!-- imagesloaded js -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/imagesloaded.pkgd.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/imagesloaded.pkgd.min.js"></script>
     <!-- isotope min js -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/isotope.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/isotope.min.js"></script>
     <!-- vanilla-tilt.babel.min js -->
-    <script src='{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/vanilla-tilt.babel.min.js'></script>
+    <script src='{{ asset('assets/website/themes/' . $theme->files_path) }}/js/vanilla-tilt.babel.min.js'></script>
     <!-- typed.min js -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/typed.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/typed.min.js"></script>
     <!-- typed text js -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/typed-text.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/typed-text.js"></script>
     <!-- mCustomScrollbar.concat.min js -->
-    <script
-        src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/jquery.mCustomScrollbar.concat.min.js">
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/jquery.mCustomScrollbar.concat.min.js">
     </script>
     <!-- scripts js -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/scripts.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/scripts.js"></script>
 
 </body>
 

@@ -49,6 +49,7 @@ Route::controller(App\Http\Controllers\ThemeController::class)->prefix('themes')
     Route::get('/activate/{id}', 'ativateTheme')->name('activate')->middleware('auth');
     Route::get('/{category}', 'index')->name('index');
     Route::get('/show/{slug}', 'show')->name('show');
+    Route::get('/preview/{slug}', 'preview')->name('preview');
 });
 
 //service
@@ -59,7 +60,7 @@ Route::controller(App\Http\Controllers\ServicesController::class)->prefix('servi
 });
 
 //profile
-Route::controller(App\Http\Controllers\ProfileController::class)->prefix('profiles')->name('profile.')->group(function () {
+Route::controller(App\Http\Controllers\ProfileController::class)->middleware('auth')->prefix('profiles')->name('profile.')->group(function () {
     Route::get('/basic', 'showBasicInfo')->name('basic');
     Route::put('/basic', 'updateBasicInfo')->name('basic.update');
     Route::get('/educational', 'showEducationalInfo')->name('educational');
