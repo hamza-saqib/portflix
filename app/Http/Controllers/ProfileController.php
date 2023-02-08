@@ -24,8 +24,72 @@ class ProfileController extends Controller
 
     public function showEducationalInfo()
     {
-        $universities = ['uni 1','uni 2'];
-        $degrees = ['degree 1','degree 2'];
+        $universities = [
+            'Air University (AU), Islamabad',
+            'Allama Iqbal Open University (AIOU), Islamabad',
+            'Bahria University (BU), Islamabad',
+            'COMSATS Institute of Information Technology',
+            'Federal Urdu University of Arts, Sciences and Technology (FUUAST), Islamabad',
+            'Foundation University, Islamabad',
+            'Institute of Space Technology (IST), Islamabad',
+            'International Islamic University (IIU), Islamabad',
+            'National University of Computer and Emerging Sciences (NUCES), Islamabad',
+            'National University of Modern Languages (NUML), Islamabad',
+            'Pakistan Institute of Engineering & Applied Sciences (PIEAS), Islamabad',
+            'Quaid-i-Azam University (QAU), Islamabad',
+            'Riphah International University (RIU),Islamabad',
+            'Bahauddin Zakariya University (BZU), Multan',
+            'Beaconhouse National University (BNU),Lahore',
+            'College of Buisness Administration& Economics (NCBA&E),Lahore',
+            'Fatima Jinnah Women University (FJWU), Rawalpindi',
+            'Forman Christian College (FCC), Lahore',
+            'GIFT University,Gujranwala',
+            'Government College University (GCU),Faisalabad',
+            'Hajvery University (HU),Lahore',
+            'Imperial College of Business Studies,Lahore',
+            'Institute of Management Sciences (IMS),Lahore',
+            'Islamia University, Bahawalpur',
+            'Kinnaird College for Women, Lahore',
+            'Lahore College for Women University (LCWU), Lahore',
+            'Lahore School of Economics (LSE), Lahore',
+            'Lahore University of Management Sciences (LUMS), Lahore',
+            'Minhaj University, Lahore',
+            'National College of Arts (NCA), Lahore',
+            'National Textile University (NTU), Faisalabad (Federal Chartered)',
+            'National University of Sciences & Technology (NUST), Rawalpindi',
+            'The Superior College, Lahore',
+            'The University of Management & Technology (UMT), Lahore',
+            'University of Agriculture, Faisalabad',
+            'University of Arid Agriculture, Murree Road, Rawalpindi',
+            'University of Central Punjab (UCP), Lahore',
+            'University of Education, Lahore',
+            'University of Engineering & Technology (UET), Lahore',
+            'University of Engineering & Technology (UET), Taxila',
+            'University of Faisalabad, Faisalabad',
+            'University of Gujrat , Gujrat',
+            'University of Health Sciences (UHS), Lahore',
+            'University of Lahore, Lahore',
+            'University of Sargodha, Sargodha',
+            'University of South Asia (USA), Lahore',
+            'University of Veterinary and Animal Sciences (UVAS), Lahore',
+            'Virtual University of Pakistan (VU), Lahore',
+            'University of Mnagemant And Techonlogy(UMT),Lahore',
+            'Agha Khan University (AKU), Karachi',
+            'Baqai Medical University, Karachi',
+            'Indus Institute of Higher Education .Karachi',
+            'Frontier Women University, Peshawar',
+            'CECOS University of Information Technology and Emerging Sciences, Peshawar',
+            'City University of Science & Information Technology, Peshawar',
+            'Gandhara University, Peshawar',
+            'Ghulam Ishaq Khan Institute of Engineering Sciences & Technology, Swabi',
+            'NWFP Agriculture University, Peshawar',
+            'NWFP University of Engineering & Technology, Peshawar',
+
+        ];
+        $degrees = [
+            'degree 1',
+            'degree 2'
+        ];
         $major_subjects = ['major 1','major 2'];
         $user = Auth::user();
         return view('pages.profile.educational_info', compact('user', 'universities', 'degrees', 'major_subjects'));
