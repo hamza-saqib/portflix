@@ -16,12 +16,15 @@ return new class extends Migration
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
             $table->string('company_name');
+            $table->string('position');
             $table->string('job_title');
             $table->string('description')->nullable();
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->boolean('is_currently_working')->default(false);
             $table->integer('display_order')->nullable();
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

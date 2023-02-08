@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Education;
+use App\Models\Experience;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +32,12 @@ class ProfileController extends Controller
     }
 
     public function showExperienceInfo()
-    {   $user = Auth::user();
-        return view('pages.profile.experience_info', compact('user'));
+    {
+        $positions = ['position 1','position 2'];
+        $companies = ['company 1','company 2'];
+        $jobTitles = ['job_title 1','job_title 2'];
+        $user = Auth::user();
+        return view('pages.profile.experience_info', compact('user', 'positions', 'companies', 'jobTitles'));
     }
 
     public function showIndustryInfo()
@@ -124,6 +129,38 @@ class ProfileController extends Controller
 
     public function updateExperienceInfo(Request $request){
 
+        $companies = $request->input('companies');
+        $positions = $request->input('positions');
+        $job_titles = $request->input('job_titles');
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+        $descriptions = $request->input('descriptions');
+        $is_currently_working = $request->input('is_currently_working');
+
+        $experience = Experience::where('user_id', Auth::id())->get()->first();
+
+        if($experience){
+            $experience->position = $positions[0];
+            $experience->company_name = $companies[0];
+            $experience->job_title = $job_titles[0];
+            $experience->start_date = $start_date[0];
+            $experience->end_date = $end_date[0];
+            $experience->description = $descriptions[0];
+            $experience->is_currently_working = is_null($is_currently_working) ? false : true;
+
+            $experience->save();
+        } else {
+            Experience::create([
+                'position' => $positions[0],
+                'company_name' => $companies[0],
+                'job_title' => $job_titles[0],
+                'start_date' => $start_date[0],
+                'end_date' => $end_date[0],
+                'description' => $descriptions[0],
+                'is_currently_working' => is_null($is_currently_working) ? false : true,
+                'user_id' => Auth::id()
+            ]);
+        }
         return redirect()->back()->with(['message'=>'Successfully updated !']);
     }
 
