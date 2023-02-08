@@ -45,6 +45,28 @@ class DatabaseSeeder extends Seeder
             'display_order' => 2,
         ]);
 
+        Theme::create([
+            'name' => 'Blon',
+            'slug' => 'blon',
+            'files_path' => 'blon',
+            'summary' => 'Blon is a creative multipurpose personal portfolio HTML template with lots of features, variations, and demos. Blon is for everyone.',
+            'description' => 'Blon is a creative multipurpose personal portfolio HTML template with lots of features, variations, and demos. Blon is for everyone. It fit in every category like coming soon, product display, portfolio, Personal, Resume, CV template, Portfolio minimal site, info site, etc.',
+            'author_name' => 'C-Kav',
+            'category' => json_encode(['medical', 'photography']),
+            'display_order' => 3,
+        ]);
+
+        Theme::create([
+            'name' => 'Jonna',
+            'slug' => 'jonna',
+            'files_path' => 'jonna',
+            'summary' => 'Jonna is personal portfolio website template with modern design. The layouts is responsive and looks great on all devices from desktop to mobile.',
+            'description' => 'Jonna is personal portfolio website template with modern design. The layouts is responsive and looks great on all devices from desktop to mobile. Jonna help you build professional looking website in no time. Get Jonna now!',
+            'author_name' => 'designesia',
+            'category' => json_encode(['photography']),
+            'display_order' => 4,
+        ]);
+
         User::create([
             'name' => 'Maria Anwar',
             'username' => 'maria-anwar',
