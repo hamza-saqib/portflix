@@ -13,27 +13,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap.min css -->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/bootstrap/css/bootstrap.min.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Themeify Icon Css -->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/themify/css/themify-icons.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/themify/css/themify-icons.css">
     <!-- animate.css -->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/animate-css/animate.css">
-    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/aos/aos.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/animate-css/animate.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/aos/aos.css">
     <!-- owl carousel -->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/owl/assets/owl.carousel.min.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/owl/assets/owl.carousel.min.css">
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/owl/assets/owl.theme.default.min.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/owl/assets/owl.theme.default.min.css">
     <!-- Slick slider CSS -->
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/slick-carousel/slick/slick.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/slick-carousel/slick/slick.css">
     <link rel="stylesheet"
-        href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/slick-carousel/slick/slick-theme.css">
+        href="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/slick-carousel/slick/slick-theme.css">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/website/themes/' . $theme->files_path) }}/css/style.css">
 
 </head>
 
@@ -46,7 +46,7 @@
     <nav class="navbar navbar-expand-lg bg-transprent py-4 fixed-top navigation" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <h2 class="logo">{{$user->company_name}}</h2>
+                <h2 class="logo">{{ $user->company_name }}</h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
                 aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,9 +67,12 @@
                 </ul>
 
                 <ul class="list-inline mb-0 ml-lg-4 nav-social">
-                    <li class="list-inline-item"><a href="{{$user->facebook}}" target="_blank"><i class="ti-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="{{$user->twitter}}" target="_blank"><i class="ti-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="{{$user->pinterest}}" target="_blank"><i class="ti-pinterest"></i></a></li>
+                    <li class="list-inline-item"><a href="{{ $user->facebook }}" target="_blank"><i
+                                class="ti-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="{{ $user->twitter }}" target="_blank"><i
+                                class="ti-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="{{ $user->pinterest }}" target="_blank"><i
+                                class="ti-pinterest"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -95,8 +98,8 @@
                         <span class="head-trans">Stephen</span>
                         <h1 class="font-weight-normal text-color text-md"><i class="ti-minus mr-2"></i>Theme Developer
                         </h1>
-                        <h2 class="mt-3 text-lg mb-3 text-capitalize">{{$user->name}}.</h2>
-                        <p class="animated fadeInUp lead mt-4 mb-5 text-white-50 lh-35">{{$user->bio}}</p>
+                        <h2 class="mt-3 text-lg mb-3 text-capitalize">{{ $user->name }}.</h2>
+                        <p class="animated fadeInUp lead mt-4 mb-5 text-white-50 lh-35">{{ $user->bio }}</p>
                         <a href="#about" class="btn btn-solid-border">About Me</a>
                     </div>
                 </div>
@@ -115,7 +118,7 @@
                             <h2><i class="ti-minus"></i>Myself</h2>
                         </div>
                         <div class="col-lg-8">
-                            <p class="text-white-50 text-md">{{$user->bio}}</p>
+                            <p class="text-white-50 text-md">{{ $user->bio }}</p>
 
                         </div>
 
@@ -134,10 +137,10 @@
 
                             <ul class="list-unstyled lh-45">
                                 @foreach ($user->skills as $skill)
-                                <li>
-                                    <i class="ti-check mr-3 text-color"></i>
-                                    {{$skill->name}}
-                                </li>
+                                    <li>
+                                        <i class="ti-check mr-3 text-color"></i>
+                                        {{ $skill->name }}
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -164,18 +167,19 @@
             </div>
             <div class="row">
                 @foreach ($user->skills as $skill)
-                <div class="col-lg-6 col-md-6">
-                    <div class="skill-bar mb-4 mb-lg-0">
-                        <div class="mb-4 text-right">
-                            <h4 class="font-weight-normal">{{$skill->name}}</h4>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="{{$skill->percentage}}">
-                                <span class="percent-text"><span class="count">{{$skill->percentage}}</span>%</span>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="skill-bar mb-4 mb-lg-0">
+                            <div class="mb-4 text-right">
+                                <h4 class="font-weight-normal">{{ $skill->name }}</h4>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="{{ $skill->percentage }}">
+                                    <span class="percent-text"><span
+                                            class="count">{{ $skill->percentage }}</span>%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>
@@ -200,13 +204,13 @@
 
             <div class="row no-gutters">
                 @foreach ($user->services as $service)
-                <div class="col-lg-4 col-md-6">
-                    <div class="card p-5 rounded-0">
-                        <i class="ti-layers text-lg-2 text-muted"></i>
-                        <h3 class="my-4 text-capitalize">{{$service->name}}</h3>
-                        <p>{{$service->summary}}</p>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card p-5 rounded-0">
+                            <i class="ti-layers text-lg-2 text-muted"></i>
+                            <h3 class="my-4 text-capitalize">{{ $service->name }}</h3>
+                            <p>{{ $service->summary }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
                 {{-- <div class="col-lg-4 col-md-6">
                     <div class="card p-5 rounded-0">
@@ -377,21 +381,21 @@
                 <div class="col-lg-10">
                     <div class="testimonial-slider">
                         @foreach ($user->testimonials as $testimonial)
-                        <div class="testimonial-item position-relative">
-                            <i class="ti-quote-left text-white-50"></i>
-                            <div class="testimonial-content">
-                                <p class="text-md mt-3">{{$testimonial->message}}</p>
+                            <div class="testimonial-item position-relative">
+                                <i class="ti-quote-left text-white-50"></i>
+                                <div class="testimonial-content">
+                                    <p class="text-md mt-3">{{ $testimonial->message }}</p>
 
-                                <div class="media mt-5 align-items-center">
-                                    <img src="images/about/2.jpg" alt=""
-                                        class="img-fluid  rounded-circle align-self-center mr-4">
-                                    <div class="media-body">
-                                        <h3 class="mb-0">{{$testimonial->customer_name}}</h3>
-                                        {{-- <span class="text-muted">Creative Designer</span> --}}
+                                    <div class="media mt-5 align-items-center">
+                                        <img src="images/about/2.jpg" alt=""
+                                            class="img-fluid  rounded-circle align-self-center mr-4">
+                                        <div class="media-body">
+                                            <h3 class="mb-0">{{ $testimonial->customer_name }}</h3>
+                                            {{-- <span class="text-muted">Creative Designer</span> --}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -415,26 +419,27 @@
 
             <div class="row">
                 @foreach ($user->blogs as $blog)
-                <div class="col-lg-4 col-md-6">
-                    <div class="position-relative blog-item mb-5 mb-lg-0">
-                        <img src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/images/blog/img1.jpg" alt="blog-1" class="img-fluid">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="position-relative blog-item mb-5 mb-lg-0">
+                            <img src="{{ asset('assets/website/themes/' . $theme->files_path) }}/images/blog/img1.jpg"
+                                alt="blog-1" class="img-fluid">
 
-                        <div class="blog-item-meta mb-3">
-                            <span><i class="ti-user mr-2"></i>by {{$blog->author_name}}</span>
-                            <span class="text-muted mx-2"> | </span>
-                            <span class="text-white-50">Photography</span>
-                        </div>
+                            <div class="blog-item-meta mb-3">
+                                <span><i class="ti-user mr-2"></i>by {{ $blog->author_name }}</span>
+                                <span class="text-muted mx-2"> | </span>
+                                <span class="text-white-50">Photography</span>
+                            </div>
 
-                        <div class="pl-4">
-                            <a href="blog-single.html">
-                                <h3 class="mb-4 ">{{$blog->title}}</h3>
-                            </a>
+                            <div class="pl-4">
+                                <a href="blog-single.html">
+                                    <h3 class="mb-4 ">{{ $blog->title }}</h3>
+                                </a>
 
-                            <a href="blog-single.html" class="learn-more text-uppercase text-sm"><i
-                                    class="ti-arrow-right mr-2"></i>Learn more</a>
+                                <a href="blog-single.html" class="learn-more text-uppercase text-sm"><i
+                                        class="ti-arrow-right mr-2"></i>Learn more</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -527,28 +532,25 @@
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- Main jQuery -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/jquery/jquery.min.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4.3.1 -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/bootstrap/js/popper.js"></script>
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/bootstrap/js/bootstrap.min.js">
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/bootstrap/js/popper.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/bootstrap/js/bootstrap.min.js">
     </script>
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/nav/jquery.easing.1.3.js">
-    </script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/nav/jquery.easing.1.3.js"></script>
 
     <!-- Slick Slider -->
-    <script
-        src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/slick-carousel/slick/slick.min.js">
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/slick-carousel/slick/slick.min.js">
     </script>
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/owl/owl.carousel.min.js">
-    </script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/owl/owl.carousel.min.js"></script>
 
     <!-- Skill COunt -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/counto/apear.js"></script>
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/counto/counTo.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/counto/apear.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/counto/counTo.js"></script>
     <!-- AOS Animation -->
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/plugins/aos/aos.js"></script>
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/script.js"></script>
-    <script src="{{ asset('assets/website/themes/' . $user->selected_theme_path) }}/js/ajax-contact.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/plugins/aos/aos.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/script.js"></script>
+    <script src="{{ asset('assets/website/themes/' . $theme->files_path) }}/js/ajax-contact.js"></script>
 
 </body>
 

@@ -16,7 +16,7 @@ class ThemeController extends Controller
      */
     public function index($category)
     {
-        if($category == 'all'){
+        if ($category == 'all') {
             $themes = Theme::paginate(6);
         } else {
             $themes = Theme::whereJsonContains('category', $category)->paginate(6);
@@ -38,14 +38,14 @@ class ThemeController extends Controller
     public function ativateTheme($id)
     {
         $theme = Theme::find($id);
-        if($theme){
+        if ($theme) {
             $user = User::find(Auth::id());
             $user->theme_id = $theme->id;
             $user->selected_theme_path = $theme->files_path;
             $user->save();
-            return redirect()->back()->with(['message'=>'activated']);
+            return redirect()->back()->with(['message' => 'activated']);
         }
-        return redirect()->back()->with(['message'=>'activated']);
+        return redirect()->back()->with(['message' => 'activated']);
     }
 
 
@@ -70,6 +70,13 @@ class ThemeController extends Controller
     {
         $theme = Theme::where('slug', $slug)->get()->first();
         return view('pages.theme.show', compact('theme'));
+    }
+
+    public function preview($slug)
+    {
+        $theme = Theme::where('slug', $slug)->get()->first();
+        $user = User::find(1);
+        return view('themes.' . $theme->files_path . '.index', compact('user', 'theme'));
     }
 
     /**

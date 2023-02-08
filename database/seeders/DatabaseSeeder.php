@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             'summary' => 'A modern Startup agency and Personal Portfolio template for business, agency and startup company.',
             'description' => 'Ratsaan – A modern Startup agency and Personal Portfolio template for business, agency and startup company. Modifying the template is quite simple.Working contact form is handy for you to get email from the site.',
             'author_name' => 'pxelCode',
+            'category' => json_encode(['it', 'bussiness', 'photography']),
             'display_order' => 1,
         ]);
 
@@ -40,6 +41,7 @@ class DatabaseSeeder extends Seeder
             'summary' => 'Creating a professional, modern and sophisticated online resume website is easy with Martyn CV / Resume / Personal Portfolio / One page. Martyn CV / Resume HTML Template is a perfect solution for professional resume / cv / portfolio and personal website.',
             'description' => 'Martyn – Creating a professional, modern and sophisticated online resume website is easy with Martyn CV / Resume / Personal Portfolio / One page. Martyn CV / Resume HTML Template is a perfect solution for professional resume / cv / portfolio and personal website. it comes with a lot of useful features. It is easy to customize this template for any of Your website needs.',
             'author_name' => 'Az_Template',
+            'category' => json_encode(['it', 'bussiness']),
             'display_order' => 2,
         ]);
 

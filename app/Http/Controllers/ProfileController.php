@@ -6,6 +6,7 @@ use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Services;
 use App\Models\Testimonial;
+use App\Models\Theme;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,8 @@ class ProfileController extends Controller
     public function showPortfolio($username)
     {
         $user = User::where('username', $username)->get()->first();
-        return view('themes.'.$user->selected_theme_path.'.index', compact('user'));
+        $theme = Theme::find($user->theme_id);
+        return view('themes.'.$user->selected_theme_path.'.index', compact('user', 'theme'));
     }
 
     public function showBasicInfo()
