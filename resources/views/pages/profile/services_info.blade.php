@@ -10,34 +10,70 @@
                 </div>
                 <div class="col-md-10 py-3">
                     <h4 class="text-center">Services</h4>
-                    <form class="row g-3 needs-validation" method="POST" action="{{ route('profile.educational.update') }}"
+                    <form class="row g-3 needs-validation" method="POST" action="{{ route('profile.services.update') }}"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+
+                        @forelse ($user->services as $service)
                         <div class="col-md-6 pt-4">
-                            <label for="validationCustom01" class="form-label">Services</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <label for="validationCustom01" class="form-label">Service Name</label>
+                            <input type="text" class="form-control" name="name[]" value="{{$service->name}}" id="validationCustom01" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-6 pt-4">
                             <label for="validationCustom02" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="validationCustom02" required>
+                            <input type="text" class="form-control" name="min_prices[]" value="{{$service->min_price}}" id="validationCustom02" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
-
-
-
-
+                        <div class="col-md-6 pt-4">
+                            <label for="validationCustom02" class="form-label">Summary</label>
+                            <input type="text" class="form-control" name="summaries[]" value="{{$service->summary}}" id="validationCustom02" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
                         <div class="col-12 pt-4">
                             <div class="mb-3">
                                 <label for="Textarea" class="form-label">Description</label>
-                                <textarea class="form-control " id="Textarea" required></textarea>
+                                <textarea class="form-control " name="descriptions[]"  id="Textarea" required>{{$service->description}}</textarea>
                             </div>
                         </div>
+                        @empty
+                        <div class="col-md-6 pt-4">
+                            <label for="validationCustom01" class="form-label">Service Name</label>
+                            <input type="text" class="form-control" name="name[]" id="validationCustom01" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                            <label for="validationCustom02" class="form-label">Price</label>
+                            <input type="text" class="form-control" name="min_prices[]" id="validationCustom02" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                            <label for="validationCustom02" class="form-label">Summary</label>
+                            <input type="text" class="form-control" name="summaries[]"  id="validationCustom02" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-12 pt-4">
+                            <div class="mb-3">
+                                <label for="Textarea" class="form-label">Description</label>
+                                <textarea class="form-control " name="descriptions[]" id="Textarea" required></textarea>
+                            </div>
+                        </div>
+
+                        @endforelse
+
 
 
 

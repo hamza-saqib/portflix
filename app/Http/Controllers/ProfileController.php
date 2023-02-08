@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Services;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -170,6 +171,30 @@ class ProfileController extends Controller
     }
 
     public function updateServicesInfo(Request $request){
+
+        $name = $request->input('name');
+        $min_prices = $request->input('min_prices');
+        $summaries = $request->input('summaries');
+        $descriptions = $request->input('descriptions');
+
+        $services = Services::where('user_id', Auth::id())->get()->first();
+
+        if($services){
+            $services->min_price = $min_prices[0];
+            $services->name = $name[0];
+            $services->summary = $summaries[0];
+            $services->description = $descriptions[0];
+
+            $services->save();
+        } else {
+            Services::create([
+                'min_price' => $min_prices[0],
+                'name' => $name[0],
+                'summary' => $summaries[0],
+                'description' => $descriptions[0],
+                'user_id' => Auth::id()
+            ]);
+        }
 
         return redirect()->back()->with(['message'=>'Successfully updated !']);
     }
