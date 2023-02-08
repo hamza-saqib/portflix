@@ -23,8 +23,13 @@ class ThemeFactory extends Factory
             'description' => fake()->sentence(),
             'feature_image' => fake()->url(),
             'author_name' => fake()->name(),
-            'category' => json_encode(['it', 'bussiness']),
-            'display_order' => fake()->numberBetween(2,32),
+            'category' => json_encode(fake()->randomElement([
+                [ 'photography', 'web-development', 'medical'],
+                ['it', 'bussiness', 'fashion_design', 'photography', 'web-development', 'medical'],
+                ['it', 'bussiness', 'medical'],
+                [ 'photography', 'web-development']
+            ])),
+            'display_order' => fake()->numberBetween(2, 32),
             'slug' => fake()->slug(),
         ];
     }
