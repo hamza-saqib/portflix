@@ -70,6 +70,8 @@ Route::controller(App\Http\Controllers\ProfileController::class)->prefix('profil
     Route::put('/industry', 'updateIndustryInfo')->name('industry.update');
     Route::get('/services', 'showServicesInfo')->name('services');
     Route::put('/services', 'updateServicesInfo')->name('services.update');
+    Route::get('/testimonials', 'showtesTimonialsInfo')->name('testimonials');
+    Route::put('/testimonials', 'updatetesTimonialsInfo')->name('testimonials.update');
 });
 
 //adminpanel

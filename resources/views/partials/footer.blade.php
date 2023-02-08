@@ -12,15 +12,15 @@
                 <ul class="footer-menu pt-3 p-0">
                     <li><a href="it_faq.html"><i class="fa fa-angle-right"></i> Faq</a></li>
                     <li><a href="it_privacy_policy.html"><i class="fa fa-angle-right"></i> Privacy policy</a></li>
-                    <li><a href="it_news.html"><i class="fa fa-angle-right"></i> Blogs</a></li>
-                    <li><a href="it_contact.html"><i class="fa fa-angle-right"></i> About us</a></li>
+                    <li><a href="{{route('blogs.index')}}"><i class="fa fa-angle-right"></i> Blogs</a></li>
+                    <li><a href="{{route('about-us')}}"><i class="fa fa-angle-right"></i> About us</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <h4 class="foot_section">Services</h4>
                 <ul class="footer-menu pt-3 p-0 ">
-                    <li><a href=""><i class="fa fa-angle-right"></i> Portfolios</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> Templates</a></li>
+                    <li><a href="{{route('themes.index', 'all')}}"><i class="fa fa-angle-right"></i> Portfolios</a></li>
+                    <li><a href="{{route('themes.index', 'all')}}"><i class="fa fa-angle-right"></i> Templates</a></li>
                     <li><a href=""><i class="fa fa-angle-right"></i> APIs</a></li>
                     <li><a href=""><i class="fa fa-angle-right"></i> SEO</a></li>
 
@@ -55,7 +55,7 @@
     <div class="container">
         <div class="row  py-2">
             <div class="col-12 text-center">
-                <p class="text-white mt-2">Portflix © Copyrights 2022 All rights reserved.</p>
+                <p class="text-white mt-2">Portflix © Copyrights 2023 All rights reserved.</p>
             </div>
         </div>
     </div>

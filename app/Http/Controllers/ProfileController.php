@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Services;
+use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +50,11 @@ class ProfileController extends Controller
     public function showServicesInfo()
     {   $user = Auth::user();
         return view('pages.profile.services_info', compact('user'));
+    }
+
+    public function showTestimonialsInfo()
+    {   $user = Auth::user();
+        return view('pages.profile.testimonials_info', compact('user'));
     }
 
     public function updateBasicInfo(Request $request){
@@ -199,6 +205,29 @@ class ProfileController extends Controller
         return redirect()->back()->with(['message'=>'Successfully updated !']);
     }
 
+
+    public function updateTestimonialsInfo(Request $request){
+
+        $customer_names = $request->input('customer_names');
+        $messages = $request->input('messages');
+
+        $testimonial = Testimonial::where('user_id', Auth::id())->get()->first();
+
+        if($testimonial){
+            $testimonial->message = $messages[0];
+            $testimonial->customer_name = $customer_names[0];
+
+            $testimonial->save();
+        } else {
+            Testimonial::create([
+                'message' => $messages[0],
+                'customer_name' => $customer_names[0],
+                'user_id' => Auth::id()
+            ]);
+        }
+
+        return redirect()->back()->with(['message'=>'Successfully updated !']);
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -5,6 +5,7 @@
             Industry/Skills<br>/Language </a></li>
     <li class="pt-2"> <a href="{{route('profile.experience')}}" class="text-decoration-none">Experience </a>
     </li>
-    <li class="pt-2"><a href="{{route('profile.educational')}}" class="text-decoration-none"> Projects</a></li>
+    {{-- <li class="pt-2"><a href="{{route('profile.educational')}}" class="text-decoration-none"> Projects</a></li> --}}
     <li class="pt-2"> <a href="{{route('profile.services')}}" class="text-decoration-none"> Services</a></li>
+    <li class="pt-2"> <a href="{{route('profile.testimonials')}}" class="text-decoration-none"> Testimonials</a></li>
 </ul>
