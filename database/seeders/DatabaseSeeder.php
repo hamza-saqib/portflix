@@ -67,6 +67,17 @@ class DatabaseSeeder extends Seeder
             'display_order' => 4,
         ]);
 
+        Theme::create([
+            'name' => 'CVIT',
+            'slug' => 'cvit',
+            'files_path' => 'cvit',
+            'summary' => 'CVIT is a Multipurpose Personal Portfolio / vCard / CV / Resume Template designed for All kinds of Personal Purpose. It’s an HTML5 template based on Bootstrap 3.3.7.',
+            'description' => 'CVIT is a Multipurpose Personal Portfolio / vCard / CV / Resume Template designed for All kinds of Personal Purpose. It’s an HTML5 template based on Bootstrap 3.3.7. Anyone can easily update/edit this template to follow our Well Sorted Documentation.',
+            'author_name' => 'cvit',
+            'category' => json_encode(['it']),
+            'display_order' => 5,
+        ]);
+
         User::create([
             'name' => 'Maria Anwar',
             'username' => 'maria-anwar',
