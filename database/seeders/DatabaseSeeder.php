@@ -210,7 +210,7 @@ class DatabaseSeeder extends Seeder
             'company_name' => 'Pair Programmers',
             'position' => 'Senior Developer',
             'job_title' => 'Mern Stack Developer',
-            'description' => 'job description',
+            'description' => 'In my 2 years of  experience in Mern Stack development from Pair Programmers, I worked on different projects including Portflix and customboxes.',
             'start_date' => date('2021-02-01'),
             'end_date' => null,
             'is_currently_working' => true,
