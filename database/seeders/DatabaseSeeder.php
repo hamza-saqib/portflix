@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
 
         $user = User::create([
             'name' => 'Maria Anwar',
-            'phone' => '+92 323 4188002',
+            'phone' => '+92 322 4188002',
             'address' => '13j Gulberg 3, Lahore, Pakistan',
             'tagline' => 'MERN Stack Developer',
             'first_name' => 'Maria',
@@ -97,10 +97,45 @@ class DatabaseSeeder extends Seeder
             'facebook' => 'https://www.facebook.com/',
             'pinterest' => 'https://www.pinterest.com/',
             'twiter' => 'https://www.twiter.com/',
-            'skills_summary' => 'this is my skills summary',
-            'experiences_summary' => 'this is my experinces summary',
-            'educations_summary' => 'this is my educations summary',
-            'blogs_summary' => 'this is my blogs summary',
+            'skills_summary' => 'My Proficiencies are in the following technologies: React.js, Node.Js with Express framework, Laravel-PHP framework, Creating Database with MongoDB & MySQL, Making APIs, Website Configuration, JavaScript',
+            'experiences_summary' => 'I got 2 years experience in Laravel and in Mern Stack from Pair Programmers in which I worked on different projects including Portflix and customboxes.',
+            'educations_summary' => 'I did ICS(Intermediate Computer Science) from Punjab College Lahore, I did my bachelors in BSSE from University of Management and Technology. I did Mern Stack course from Beacon House',
+            'blogs_summary' => 'Laravel is a popular PHP framework that is designed to help developers build robust and scalable web applications. On the other hand, MERN stack is a set of four technologies - MongoDB, Express, React, and Node.js - that is used to create full-stack web applications. In this article, we will explore how Laravel and MERN stack technologies can be used together to build highly performant and scalable web applications.
+
+            Introduction to Laravel. Laravel is an open-source PHP framework that was developed by Taylor Otwell. It follows the Model-View-Controller (MVC) architecture and provides a range of features and tools that simplify the development of web applications. Laravel has gained immense popularity in recent years due to its expressive syntax, robust features, and extensive documentation.
+
+            Some of the key features of Laravel include:Routing: Laravel provides a simple and elegant way to define application routes using the Route class.
+
+            Blade Templating Engine: Laravel Blade templating engine is a powerful tool that allows developers to create reusable templates and layouts.
+
+            Eloquent ORM: Laravels Eloquent ORM provides a simple and intuitive way to work with databases. Authentication: Laravel comes with built-in authentication features that allow developers to easily implement user authentication and authorization.
+
+            Introduction to MERN Stack
+
+            MERN stack is a collection of four technologies - MongoDB, Express, React, and Node.js - that are used together to build full-stack web applications. Here is a brief overview of each of these technologies:
+            MongoDB: MongoDB is a NoSQL database that stores data in JSON-like documents. It is highly scalable and provides powerful querying capabilities.
+
+            Express: Express is a web application framework for Node.js that provides a range of features for building web applications.
+
+            React: React is a JavaScript library for building user interfaces. It is widely used for creating single-page applications.
+
+            Node.js: Node.js is a JavaScript runtime environment that allows developers to run JavaScript code outside of a web browser.
+
+            Why Laravel and MERN Stack?
+
+            Laravel and MERN stack technologies can be used together to build full-stack web applications that are highly performant and scalable. Here are some of the key benefits of using Laravel and MERN stack together:
+
+            Scalability: Both Laravel and MERN stack technologies are designed to be highly scalable. By combining these technologies, developers can build web applications that can handle a large number of users and data.
+
+            Robustness: Laravel provides a range of features and tools that help developers build robust web applications. Similarly, MERN stack technologies provide a solid foundation for building web applications that are reliable and performant.
+
+            Flexibility: Laravel and MERN stack technologies are both highly flexible and can be customized to meet the specific needs of different projects.
+
+            Extensibility: Both Laravel and MERN stack technologies provide a range of libraries and tools that can be used to extend their functionality and add new features to web applications.
+
+            Conclusion
+
+            Laravel and MERN stack technologies can be used together to build full-stack web applications that are highly performant and scalable. By combining the robust features of Laravel with the flexibility and scalability of MERN stack technologies, developers can create web applications that are tailored to meet the specific needs of different projects. Whether you are building a small web application or a large-scale enterprise solution, Laravel and MERN stack technologies can help you build a web application that is reliable, performant, and scalable.',
             'theme_id' => $theme->id,
             'selected_theme_path' => $theme->files_path
         ]);
