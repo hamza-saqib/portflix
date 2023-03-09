@@ -27,8 +27,8 @@ class ServicesFactory extends Factory
             'description' => fake()->sentence(),
             'display_order' => fake()->numberBetween(1, 200),
             'thumbnail' => null,
-            'min_price' => fake()->numberBetween(1000, 20000000),
-            'user_id' => User::pluck('id')->random(),
+            'min_price' => '$3545',
+            'user_id' => User::all()->except(1)->pluck('id')->random(),
         ];
     }
 }

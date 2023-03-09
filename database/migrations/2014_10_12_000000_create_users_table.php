@@ -33,8 +33,12 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('city')->nullable();
             $table->string('address')->nullable();
-            $table->string('bio')->nullable();
+            $table->longText('bio')->nullable();
             $table->string('web_url')->nullable();
+            $table->string('experiences_summary')->nullable();
+            $table->string('educations_summary')->nullable();
+            $table->string('skills_summary')->nullable();
+            $table->string('blogs_summary')->nullable();
 
             $table->string('phone')->nullable();
             $table->string('whatsapp')->nullable();

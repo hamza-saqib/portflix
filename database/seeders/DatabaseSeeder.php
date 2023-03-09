@@ -5,6 +5,10 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Admin;
+use App\Models\Education;
+use App\Models\Experience;
+use App\Models\Services;
+use App\Models\Skill;
 use App\Models\Theme;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -67,7 +71,7 @@ class DatabaseSeeder extends Seeder
             'display_order' => 4,
         ]);
 
-        Theme::create([
+        $theme = Theme::create([
             'name' => 'CVIT',
             'slug' => 'cvit',
             'files_path' => 'cvit',
@@ -78,24 +82,180 @@ class DatabaseSeeder extends Seeder
             'display_order' => 5,
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => 'Maria Anwar',
+            'phone' => '+92 323 4188002',
+            'address' => '13j Gulberg 3, Lahore, Pakistan',
+            'tagline' => 'MERN Stack Developer',
+            'first_name' => 'Maria',
+            'last_name' => 'Anwar',
             'username' => 'maria-anwar',
-            'bio' => "Hi, I'm Maria. I'm a Star.",
+            'bio' => "I am a Mern Stack developer. I did my bachelors in software engineering from University of Management and Technology. My major expertise are in React.js and Node.js. I have 1 year of working experience in mern stack development. Paralelly, I also have worked with PHP Laravel projects.",
             'email' => 'mariaanwar996@gmail.com',
             'password' => Hash::make('maria9771'),
             'linkedin' => 'https://www.linkedin.com/in/maria-anwar-a21b68218/',
             'facebook' => 'https://www.facebook.com/',
             'pinterest' => 'https://www.pinterest.com/',
-            'twiter' => 'https://www.twiter.com/'
+            'twiter' => 'https://www.twiter.com/',
+            'skills_summary' => 'this is my skills summary',
+            'experiences_summary' => 'this is my experinces summary',
+            'educations_summary' => 'this is my educations summary',
+            'blogs_summary' => 'this is my blogs summary',
+            'theme_id' => $theme->id,
+            'selected_theme_path' => $theme->files_path
         ]);
 
+        Skill::create([
+            'name' => 'Javascript',
+            'level' => 'Intermediate',
+            'display_order' => 1,
+            'percentage' => 85,
+            'user_id' => $user->id
+        ]);
+
+        Skill::create([
+            'name' => 'React',
+            'level' => 'Intermediate',
+            'display_order' => 2,
+            'percentage' => 80,
+            'user_id' => $user->id
+        ]);
+
+        Skill::create([
+            'name' => 'MySql',
+            'level' => 'Intermediate',
+            'display_order' => 3,
+            'percentage' => 75,
+            'user_id' => $user->id
+        ]);
+
+        Skill::create([
+            'name' => 'Laravel',
+            'level' => 'Intermediate',
+            'display_order' => 4,
+            'percentage' => 70,
+            'user_id' => $user->id
+        ]);
+
+        Skill::create([
+            'name' => 'SEO',
+            'level' => 'Intermediate',
+            'display_order' => 5,
+            'percentage' => 75,
+            'user_id' => $user->id
+        ]);
+
+        Education::create([
+            'degree' => 'Bachelors',
+            'institute_name' => 'University of Management & Technology',
+            'major_subject' => 'Computer Science',
+            'institute_level' => 'sdfsdf',
+            'start_date' => date('2017-10-01'),
+            'end_date' => date('2023-02-01'),
+            'is_currently_studying' => false,
+            'display_order' => 1,
+            'description' => 'education description',
+            'user_id' => $user->id,
+        ]);
+
+        Education::create([
+            'degree' => 'Intermediate',
+            'institute_name' => 'Punjab College Girls',
+            'major_subject' => 'Computer Science',
+            'institute_level' => 'sdfsdf',
+            'start_date' => date('2017-10-01'),
+            'end_date' => null,
+            'is_currently_studying' => true,
+            'display_order' => 2,
+            'description' => 'education description',
+            'user_id' => $user->id,
+        ]);
+
+        Experience::create([
+            'company_name' => 'Pair Programmers',
+            'position' => 'Senior Developer',
+            'job_title' => 'Mern Stack Developer',
+            'description' => 'job description',
+            'start_date' => date('2021-02-01'),
+            'end_date' => null,
+            'is_currently_working' => true,
+            'display_order' => 1,
+            'user_id' => $user->id,
+        ]);
+
+        Services::create([
+            'name'=> 'Web Development',
+            'slug'=> 'web-development',
+            'min_price'=> '$200',
+            'summary'=> 'service summary',
+            'description'=> 'service description',
+            'thumbnail'=> null,
+            'display_order'=> 1,
+            'user_id'=> $user->id,
+        ]);
+
+        Services::create([
+            'name'=> 'SEO',
+            'slug'=> 'seo',
+            'min_price'=> '$50',
+            'summary'=> 'service summary',
+            'description'=> 'service description',
+            'thumbnail'=> null,
+            'display_order'=> 1,
+            'user_id'=> $user->id,
+        ]);
+
+        Services::create([
+            'name'=> 'UI/UX',
+            'slug'=> 'ui-ux',
+            'min_price'=> '$40',
+            'summary'=> 'service summary',
+            'description'=> 'service description',
+            'thumbnail'=> null,
+            'display_order'=> 1,
+            'user_id'=> $user->id,
+        ]);
+
+        Services::create([
+            'name'=> 'Hosting Configurations',
+            'slug'=> 'hosting-configurations',
+            'min_price'=> '$15',
+            'summary'=> 'service summary',
+            'description'=> 'service description',
+            'thumbnail'=> null,
+            'display_order'=> 1,
+            'user_id'=> $user->id,
+        ]);
+
+        Services::create([
+            'name'=> 'Mobile App Development',
+            'slug'=> 'mobile-app-development',
+            'min_price'=> '$500',
+            'summary'=> 'service summary',
+            'description'=> 'service description',
+            'thumbnail'=> null,
+            'display_order'=> 1,
+            'user_id'=> $user->id,
+        ]);
+
+        Services::create([
+            'name'=> 'Dedicated Resourses',
+            'slug'=> 'dedicated-resourses',
+            'min_price'=> '$1000',
+            'summary'=> 'service summary',
+            'description'=> 'service description',
+            'thumbnail'=> null,
+            'display_order'=> 1,
+            'user_id'=> $user->id,
+        ]);
+
+        \App\Models\User::factory(5)->create();
         \App\Models\Theme::factory(5)->create();
         \App\Models\Skill::factory(5)->create();
         \App\Models\Services::factory(5)->create();
         \App\Models\Testimonial::factory(5)->create();
         \App\Models\BlogCategory::factory(10)->create();
-        \App\Models\Blog::factory(10)->create();
+        // \App\Models\Blog::factory(10)->create();
 
         // \App\Models\User::factory(10)->create();
 

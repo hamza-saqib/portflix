@@ -80,8 +80,8 @@
                                 </div>
 
                                 <div class="logo--content">
-                                    <h1>JOHN <strong>DOE</strong></h1>
-                                    <p><strong>UX/UI</strong> DESIGNER</p>
+                                    <h1><strong>{{$user->name}}</strong></h1>
+                                    <p>{{$user->tagline}}</p>
                                 </div>
                             </a>
                             <!-- Logo End -->
@@ -197,51 +197,27 @@
                     <div class="col-md-6">
                         <h3>WHO <strong>AM I</strong>?</h3>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit, esse pariatur in minima nostrum harum dolorum perferendis quasi dolor autem deleniti inventore.</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit, esse pariatur in minima nostrum harum dolorum perferendis quasi dolor autem deleniti inventore.</p>
-
+                        <p>{{$user->bio}}</p>
                         <a href="#" class="btn btn--primary" download>DOWNLOAD MY CV</a>
                     </div>
 
                     <div class="col-md-6">
                         <h3>EXPERT <strong>IN</strong></h3>
 
-                        <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at aliquet.</p>
-
+                        <p>{{$user->skills_summary}}</p>
                         <!-- About Progrees Items Start -->
                         <div class="about--progress-items">
+                            @foreach ($user->skills as $skill)
                             <!-- About Progrees Bar Start -->
-                            <h4>GRAPHIC DESIGN</h4>
+                            <h4>{{$skill->name}}</h4>
 
                             <div class="progress">
-                                <div class="progress-bar" data-progress="60"><span>60%</span></div>
+                                <div class="progress-bar" data-progress="{{$skill->percentage}}"><span>{{$skill->percentage}}%</span></div>
                             </div>
                             <!-- About Progrees Bar End -->
+                            @endforeach
 
-                            <!-- About Progrees Bar Start -->
-                            <h4>CSS</h4>
 
-                            <div class="progress">
-                                <div class="progress-bar" data-progress="90"><span>90%</span></div>
-                            </div>
-                            <!-- About Progrees Bar End -->
-
-                            <!-- About Progrees Bar Start -->
-                            <h4>JAVASCRIPT</h4>
-
-                            <div class="progress">
-                                <div class="progress-bar" data-progress="70"><span>70%</span></div>
-                            </div>
-                            <!-- About Progrees Bar End -->
-
-                            <!-- About Progrees Bar Start -->
-                            <h4>WORDPRESS</h4>
-
-                            <div class="progress">
-                                <div class="progress-bar" data-progress="50"><span>50%</span></div>
-                            </div>
-                            <!-- About Progrees Bar End -->
                         </div>
                         <!-- About Progrees Items End -->
                     </div>
@@ -254,25 +230,30 @@
                             <div class="about--info-wrapper">
                                 <h3><strong>EDU</strong>CATION</h3>
 
+                                @foreach ($user->educations as $education)
                                 <!-- About Info Item Start -->
                                 <div class="about--info-item">
                                     <div class="row reset-gutter">
                                         <div class="col-xs-4">
-                                            <p>2005-2007</p>
-                                            <h5><strong>NY UNIVERSITY</strong></h5>
+                                            @if ($education->is_currently_studying)
+                                            <p>{{date('Y', strtotime($education->start_date))}} - current</p>
+                                            @else
+                                            <p>{{date('Y', strtotime($education->start_date))}} - {{date('Y', strtotime($education->end_date))}}</p>
+                                            @endif
+                                            <h5><strong>{{$education->institute_name}}</strong></h5>
                                         </div>
 
                                         <div class="col-xs-8 about--info-border">
-                                            <h4><strong>GRAPHIC</strong> DESIGN</h4>
-
-                                            <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at aliquet.</p>
-                                        </div>
+                                            <h4><strong>{{$education->major_subject}}</strong></h4>
+                                            <p>{{$education->description}}</p>
+                                         </div>
                                     </div>
                                 </div>
                                 <!-- About Info Item End -->
+                                @endforeach
 
                                 <!-- About Info Item Start -->
-                                <div class="about--info-item">
+                                {{-- <div class="about--info-item">
                                     <div class="row reset-gutter">
                                         <div class="col-xs-4">
                                             <p>2007-2008</p>
@@ -285,51 +266,39 @@
                                             <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at aliquet.</p>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- About Info Item End -->
-
-                                <!-- About Info Item Start -->
-                                <div class="about--info-item">
-                                    <div class="row reset-gutter">
-                                        <div class="col-xs-4">
-                                            <p>2009-2010</p>
-                                            <h5><strong>NY UNIVERSITY</strong></h5>
-                                        </div>
-
-                                        <div class="col-xs-8 about--info-border">
-                                            <h4><strong>WEB</strong> DEVELOPMENT</h4>
-
-                                            <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at aliquet.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> --}}
                                 <!-- About Info Item End -->
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="about--info-wrapper">
-                                <h3><strong>EX</strong>PERIENCE</h3>
+                                <h3><strong>EXP</strong>ERIENCE</h3>
 
+                                @foreach ($user->experiences as $experience)
                                 <!-- About Info Item Start -->
                                 <div class="about--info-item">
                                     <div class="row reset-gutter">
                                         <div class="col-xs-4">
-                                            <p>2007-2010</p>
-                                            <h5><strong>ENTER AD</strong></h5>
+                                            @if ($experience->is_currently_working)
+                                            <p>{{date('Y', strtotime($experience->start_date))}} - current</p>
+                                            @else
+                                            <p>{{date('Y', strtotime($experience->start_date))}} - {{date('Y', strtotime($experience->end_date))}}</p>
+                                            @endif
+                                            <h5><strong>{{$experience->company_name}}</strong></h5>
                                         </div>
 
                                         <div class="col-xs-8 about--info-border">
-                                            <h4><strong>GRAPHIC</strong> DESIGNER</h4>
-
-                                            <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at aliquet.</p>
+                                            <h4><strong>{{$experience->job_title}}</strong></h4>
+                                            <p>{{$experience->description}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- About Info Item End -->
+                                @endforeach
 
                                 <!-- About Info Item Start -->
-                                <div class="about--info-item">
+                                {{-- <div class="about--info-item">
                                     <div class="row reset-gutter">
                                         <div class="col-xs-4">
                                             <p>2011-2013</p>
@@ -342,25 +311,9 @@
                                             <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at aliquet.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <!-- About Info Item End -->
 
-                                <!-- About Info Item Start -->
-                                <div class="about--info-item">
-                                    <div class="row reset-gutter">
-                                        <div class="col-xs-4">
-                                            <p>2013-2014</p>
-                                            <h5><strong>EYELINE ANIMATION</strong></h5>
-                                        </div>
-
-                                        <div class="col-xs-8 about--info-border">
-                                            <h4><strong>GRAPHIC</strong> DESIGNER</h4>
-
-                                            <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at aliquet.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- About Info Item End -->
                             </div>
                         </div>
                     </div>
@@ -380,6 +333,7 @@
                 <!-- Section Title End -->
 
                 <div class="row row-eq-height">
+                    @foreach ($user->services as $service)
                     <!-- Service Item Start -->
                     <div class="col-md-4 col-sm-6 service--item">
                         <div class="service--icon">
@@ -387,15 +341,16 @@
                         </div>
 
                         <div class="service--content">
-                            <h2>WEB <strong>DESIGN</strong> &amp; <strong>UI</strong></h2>
+                            <h2><strong>{{$service->name}}</strong></h2>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit.</p>
+                            <p>{{$service->summary}}</p>
                         </div>
                     </div>
                     <!-- Service Item End -->
+                    @endforeach
 
                     <!-- Service Item Start -->
-                    <div class="col-md-4 col-sm-6 service--item">
+                    {{-- <div class="col-md-4 col-sm-6 service--item">
                         <div class="service--icon">
                             <i class="fa fa-object-group"></i>
                         </div>
@@ -405,64 +360,9 @@
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit.</p>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Service Item End -->
 
-                    <!-- Service Item Start -->
-                    <div class="col-md-4 col-sm-6 service--item">
-                        <div class="service--icon">
-                            <i class="fa fa-paint-brush"></i>
-                        </div>
-
-                        <div class="service--content">
-                            <h2>VISUAL <strong>DESIGN</strong></h2>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit.</p>
-                        </div>
-                    </div>
-                    <!-- Service Item End -->
-
-                    <!-- Service Item Start -->
-                    <div class="col-md-4 col-sm-6 service--item">
-                        <div class="service--icon">
-                            <i class="fa fa-mobile"></i>
-                        </div>
-
-                        <div class="service--content">
-                            <h2>MOBILE <strong>APP</strong> DESIGN</h2>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit.</p>
-                        </div>
-                    </div>
-                    <!-- Service Item End -->
-
-                    <!-- Service Item Start -->
-                    <div class="col-md-4 col-sm-6 service--item">
-                        <div class="service--icon">
-                            <i class="fa fa-first-order"></i>
-                        </div>
-
-                        <div class="service--content">
-                            <h2>LOGO <strong>DESIGN</strong></h2>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit.</p>
-                        </div>
-                    </div>
-                    <!-- Service Item End -->
-
-                    <!-- Service Item Start -->
-                    <div class="col-md-4 col-sm-6 service--item">
-                        <div class="service--icon">
-                            <i class="fa fa-clone"></i>
-                        </div>
-
-                        <div class="service--content">
-                            <h2>PRINT <strong>DESIGN</strong></h2>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis totam velit.</p>
-                        </div>
-                    </div>
-                    <!-- Service Item End -->
                 </div>
             </div>
         </div>
@@ -1240,10 +1140,10 @@
                             <h2>CONTACT ADDRESS</h2>
 
                             <address>
-                                <p><i class="fa fa-home"></i>House #14, Road #09, Sector #12, Dhaka-1203, Bangladesh.</p>
-                                <p><i class="fa fa-envelope"></i>support@example.com</p>
-                                <p><i class="fa fa-phone"></i>+000 000 000 000</p>
-                                <p><i class="fa fa-fax"></i>+1-212-9876543</p>
+                                <p><i class="fa fa-home"></i>{{$user->address}}</p>
+                                <p><i class="fa fa-envelope"></i>{{$user->email}}</p>
+                                <p><i class="fa fa-phone"></i>{{$user->phone}}</p>
+                                {{-- <p><i class="fa fa-fax"></i>+1-212-9876543</p> --}}
                             </address>
                         </div>
                         <!-- Contact Address End -->

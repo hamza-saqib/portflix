@@ -25,7 +25,7 @@ class SkillFactory extends Factory
             'level' => fake()->word(),
             'percentage' => fake()->numberBetween(1, 100),
             'display_order' => fake()->numberBetween(1, 200),
-            'user_id' => User::pluck('id')->random(),
+            'user_id' => User::all()->except(1)->pluck('id')->random(),
         ];
     }
 }
