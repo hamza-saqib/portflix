@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('profile_image')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
@@ -50,6 +51,11 @@ return new class extends Migration
             $table->string('fiverr')->nullable();
             $table->string('upwork')->nullable();
             $table->string('pinterest')->nullable();
+
+            $table->string('no_of_projects')->nullable();
+            $table->string('no_of_clients')->nullable();
+            $table->string('no_of_coffee_cups')->nullable();
+            $table->string('no_of_code_lines')->nullable();
 
             $table->foreignId('theme_id')->default(1);
 

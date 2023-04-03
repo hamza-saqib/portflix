@@ -76,7 +76,12 @@
                             <!-- Logo Start -->
                             <a class="logo navbar-brand" href="#">
                                 <div class="logo--img">
+                                    @if ($user->profile_image)
+                                    <img src="{{asset('storage') .'/'. $user->profile_image}}" class="img-responsive" alt="">
+                                    @else
                                     <img src="{{ asset('assets/website/themes/cvit') }}/img/logo.png" class="img-responsive" alt="">
+                                    @endif
+
                                 </div>
 
                                 <div class="logo--content">
@@ -117,7 +122,7 @@
             <!-- Banner Slider Start -->
             <div class="banner--slider BannerSlider">
                 <!-- Banner Item Start -->
-                <div class="banner--item" data-bg-img="{{ asset('assets/website/themes/cvit') }}/img/banner-img/slider-01.jpg">
+                <div class="banner--item" data-bg-img="{{ asset('assets/website/themes/cvit') }}/img/banner-img/slider-01.png">
                     <div class="container">
                         <div class="vc--parent">
                             <div class="vc--child">
@@ -137,7 +142,7 @@
                 <!-- Banner Item End -->
 
                 <!-- Banner Item Start -->
-                <div class="banner--item" data-bg-img="{{ asset('assets/website/themes/cvit') }}/img/banner-img/slider-02.jpg">
+                {{-- <div class="banner--item" data-bg-img="{{ asset('assets/website/themes/cvit') }}/img/banner-img/slider-02.jpg">
                     <div class="container">
                         <div class="vc--parent">
                             <div class="vc--child">
@@ -155,11 +160,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Banner Item End -->
 
                 <!-- Banner Item Start -->
-                <div class="banner--item bg--overlay" data-bg-video="2GqExKSwTEA">
+                {{-- <div class="banner--item bg--overlay" data-bg-video="2GqExKSwTEA">
                     <div class="container">
                         <div class="vc--parent">
                             <div class="vc--child">
@@ -177,7 +182,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Banner Item End -->
             </div>
             <!-- Banner Slider End -->
@@ -240,11 +245,11 @@
                                             @else
                                             <p>{{date('Y', strtotime($education->start_date))}} - {{date('Y', strtotime($education->end_date))}}</p>
                                             @endif
-                                            <h5><strong>{{$education->institute_name}}</strong></h5>
+                                            <h5><strong>{{$education->major_subject}}</strong></h5>
                                         </div>
 
                                         <div class="col-xs-8 about--info-border">
-                                            <h4><strong>{{$education->major_subject}}</strong></h4>
+                                            <h4><strong>{{$education->institute_name}}</strong></h4>
                                             <p>{{$education->description}}</p>
                                          </div>
                                     </div>
@@ -1086,7 +1091,7 @@
                 	<div class="col-md-3 col-sm-6 counter--item">
                         <div class="counter--num">
                             <i class="fa fa-flag"></i>
-                            <span class="CounterUp">2,500</span>
+                            <span class="CounterUp">{{$user->no_of_projects}}</span>
                         </div>
 
                         <div class="counter--text"><strong>PROJECT</strong> COMPLETED</div>
@@ -1097,7 +1102,7 @@
                 	<div class="col-md-3 col-sm-6 counter--item">
                         <div class="counter--num">
                             <i class="fa fa-smile-o"></i>
-                            <span class="CounterUp">400</span>
+                            <span class="CounterUp">{{$user->no_of_clients}}</span>
                         </div>
 
                         <div class="counter--text"><strong>HAPPY</strong> CLIENTS</div>
@@ -1108,7 +1113,7 @@
                 	<div class="col-md-3 col-sm-6 counter--item">
                         <div class="counter--num">
                             <i class="fa fa-code"></i>
-                            <span class="CounterUp">98</span>K
+                            <span class="CounterUp">{{$user->no_of_code_lines}}</span>K
                         </div>
 
                         <div class="counter--text"><strong>LINE</strong> OF <strong>CODE</strong></div>
@@ -1119,7 +1124,7 @@
                 	<div class="col-md-3 col-sm-6 counter--item">
                         <div class="counter--num">
                             <i class="fa fa-coffee"></i>
-                            <span class="CounterUp">78</span>K
+                            <span class="CounterUp">{{$user->no_of_coffee_cups}}</span>K
                         </div>
 
                         <div class="counter--text"><strong>CUP</strong> OF <strong>COFFEE</strong></div>
@@ -1167,29 +1172,30 @@
                         <div class="contact--form">
                             <div class="contact-form-status"></div>
 
-                            <form action="contact.php" method="post">
+                            <form action="{{route('contact-us.store')}}" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="contactName" class="form-control" placeholder="Name">
+                                            <input type="text" name="name" class="form-control" placeholder="Name">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" name="contactEmail" class="form-control" placeholder="Email">
+                                            <input type="email" name="email" class="form-control" placeholder="Email">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="contactSubject" class="form-control" placeholder="Subject">
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject">
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea name="contactMessage" class="form-control" rows="9" placeholder="Message"></textarea>
+                                    <textarea name="message" class="form-control" rows="9" placeholder="Message"></textarea>
                                 </div>
-
+                                <input type="hidden" name="user_id" value="{{$user->id}}">
                                 <input type="submit" value="SEND" class="submit-btn btn--primary">
                             </form>
                         </div>

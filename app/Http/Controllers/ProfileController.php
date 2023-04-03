@@ -323,6 +323,7 @@ class ProfileController extends Controller
     public function updateBasicInfo(Request $request){
         $this->validate($request, [
             'first_name' => 'required|string',
+            'profile_image' => 'nullable|file',
             'last_name' => 'required|string',
             'username' => 'required|string|unique:users,username,' . Auth::id(),
             'address' => 'nullable|string',
@@ -350,7 +351,9 @@ class ProfileController extends Controller
         $user->gender = $request->gender;
         $user->bio = $request->bio;
         if($request->has('profile_image')){
-            // $user->profile_image = $request->profile_image;
+            $file = $request->profile_image;
+            $path = $file->store('images/users', 'public');
+            $user->profile_image = $path;
         }
 
         $user->save();

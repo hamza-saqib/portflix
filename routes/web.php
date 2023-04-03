@@ -75,6 +75,11 @@ Route::controller(App\Http\Controllers\ProfileController::class)->middleware('au
     Route::put('/testimonials', 'updatetesTimonialsInfo')->name('testimonials.update');
 });
 
+//contact us
+Route::controller(App\Http\Controllers\ContactUsController::class)->prefix('contact-us')->name('contact-us.')->group(function () {
+    Route::post('/', 'store')->name('store');
+});
+
 //adminpanel
 Route::get('admin/login', [App\Http\Controllers\Adminpanel\AuthController::class, 'show'])->name('admin.login.show');
 Route::post('admin/login', [App\Http\Controllers\Adminpanel\AuthController::class, 'login'])->name('admin.login');
